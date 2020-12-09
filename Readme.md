@@ -19,7 +19,7 @@ https://www.raylib.com
     ```CMake
     project("<your_project_name>")
     ```
-4. Edit CMakeLists.txt in the root director to include the new project
+4. Edit CMakeLists.txt in the root directory to include the new project
     ```CMake
     # Include sub-projects
     # ====================
