@@ -50,4 +50,7 @@ This repo contains a github action that will automaticly build and publish your 
 
 To view your published projects, Github Pages will need to be enabled via your repository settings.
 
+ Link to HelloRaylib on GHPages:
+ https://aaronrcox.github.io/EmscriptenHelloRaylib/HelloRaylib/HelloRaylib.html
+
  
