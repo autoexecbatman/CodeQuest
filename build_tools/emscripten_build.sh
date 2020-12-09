@@ -17,6 +17,3 @@ emcmake cmake ..
 
 # run make - this will compile our project
 emmake make
-
-
-echo "RUN MAKE HELLO WORLD"
