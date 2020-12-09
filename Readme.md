@@ -2,11 +2,15 @@
 
 ## About
 
-This is a "Starter" repo for Raylib projects build with CMake for Windows and Web. 
-Raylib libraries are Pre-Compiled:
+This is a "Starter" repo for Raylib projects. Web builds are automaticly triggered via Github actions and Deployed to Github Pages.
 
+Raylib libraries are Pre-Compiled for:
  - Visual Studio 2019
  - Emscripten
+
+For more information about raylib:
+https://www.raylib.com
+
 
 ## Creating a new Project
 1. Duplicate the `HelloRaylib` from the `projects` folder
@@ -45,3 +49,5 @@ I recomend using visual studio code's `live server` extension.
 This repo contains a github action that will automaticly build and publish your projects to the gh-pages branch.
 
 To view your published projects, Github Pages will need to be enabled via your repository settings.
+
+ 

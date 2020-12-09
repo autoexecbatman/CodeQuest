@@ -1,0 +1,27 @@
+
+name: WebBuild
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: "docker build . -t build_emscripten && docker run -v `pwd`:/app build_emscripten"
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: bin/Emscripten # The folder the action should deploy.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
