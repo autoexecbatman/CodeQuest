@@ -4,7 +4,11 @@ cmake_minimum_required (VERSION 3.8)
 project("HelloRaylib")
 
 # Add source to this project's executable.
-add_executable (${PROJECT_NAME} "src/main.cpp"   "inc/Application.h" "src/Application.cpp")
+FILE(GLOB Proj_C_Files src/*.c)
+FILE(GLOB Proj_CPP_Files src/*.cpp)
+FILE(GLOB Proj_H_Files inc/*.h)
+FILE(GLOB Proj_HPP_Files inc/*.hpp)
+add_executable (${PROJECT_NAME} ${Proj_C_Files} ${Proj_CPP_Files} ${Proj_H_Files} ${Proj_HPP_Files})
 
 include_directories("inc;")
 
@@ -46,5 +50,5 @@ elseif(MSVC)
     # copy asset directory to output folder
     add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD   
         COMMAND ${CMAKE_COMMAND} -E copy_directory 
-        "${CMAKE_HOME_DIRECTORY}/projects/HelloSDL/assets" "${EXECUTABLE_OUTPUT_PATH}/assets")
+        "${CMAKE_HOME_DIRECTORY}/projects/${PROJECT_NAME}/assets" "${EXECUTABLE_OUTPUT_PATH}/assets")
 endif()

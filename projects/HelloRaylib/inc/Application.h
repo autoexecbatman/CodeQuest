@@ -1,5 +1,6 @@
 #pragma once
 
+class Game;
 
 class Application
 {
@@ -12,16 +13,9 @@ public:
 
 	void GameLoop();
 
-	void Update();
-	void Render();
-
 protected:
 private:
 
-	const char* m_windowTitle = "Hello World";
-	int m_windowWidth = 800;
-	int m_windowHeight = 450;
-
-	bool m_shouldQuit = false;
+	Game* m_game = nullptr;
 };
 
