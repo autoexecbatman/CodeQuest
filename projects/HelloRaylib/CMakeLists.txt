@@ -46,5 +46,5 @@ elseif(MSVC)
     # copy asset directory to output folder
     add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD   
         COMMAND ${CMAKE_COMMAND} -E copy_directory 
-        "${CMAKE_HOME_DIRECTORY}/projects/HelloSDL/assets" "${EXECUTABLE_OUTPUT_PATH}/assets")
+        "${CMAKE_HOME_DIRECTORY}/projects/${PROJECT_NAME}/assets" "${EXECUTABLE_OUTPUT_PATH}/assets")
 endif()
