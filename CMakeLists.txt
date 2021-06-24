@@ -29,6 +29,7 @@ endif()
 # Include sub-projects.
 # =============================================================================
 add_subdirectory ("projects/HelloRaylib")
+add_subdirectory ("projects/Pong")
 
 # TODO: add any additional sub projects here!
 
