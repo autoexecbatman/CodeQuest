@@ -1176,6 +1176,10 @@ function dbg(text) {
 // end include: runtime_debug.js
 // === Body ===
 
+function GetCanvasWidth() { return canvas.clientWidth; }
+function GetCanvasHeight() { return canvas.clientHeight; }
+
+
 // end include: preamble.js
 
   /** @constructor */
@@ -4062,6 +4066,27 @@ function dbg(text) {
   }
   }
 
+  
+  var stringToUTF8 = (str, outPtr, maxBytesToWrite) => {
+      assert(typeof maxBytesToWrite == 'number', 'stringToUTF8(str, outPtr, maxBytesToWrite) is missing the third parameter that specifies the length of the output buffer!');
+      return stringToUTF8Array(str, HEAPU8, outPtr, maxBytesToWrite);
+    };
+  
+  function ___syscall_getcwd(buf, size) {
+  try {
+  
+      if (size === 0) return -28;
+      var cwd = FS.cwd();
+      var cwdLengthInBytes = lengthBytesUTF8(cwd) + 1;
+      if (size < cwdLengthInBytes) return -68;
+      stringToUTF8(cwd, buf, size);
+      return cwdLengthInBytes;
+    } catch (e) {
+    if (typeof FS == 'undefined' || !(e.name === 'ErrnoError')) throw e;
+    return -e.errno;
+  }
+  }
+
   function ___syscall_ioctl(fd, op, varargs) {
   SYSCALLS.varargs = varargs;
   try {
@@ -4321,33 +4346,6 @@ function dbg(text) {
       },
   };
   
-  var requestPointerLock = (target) => {
-      if (target.requestPointerLock) {
-        target.requestPointerLock();
-      } else {
-        // document.body is known to accept pointer lock, so use that to differentiate if the user passed a bad element,
-        // or if the whole browser just doesn't support the feature.
-        if (document.body.requestPointerLock
-          ) {
-          return -3;
-        }
-        return -1;
-      }
-      return 0;
-    };
-  var _emscripten_exit_pointerlock = () => {
-      // Make sure no queued up calls will fire after this.
-      JSEvents.removeDeferredCalls(requestPointerLock);
-  
-      if (document.exitPointerLock) {
-        document.exitPointerLock();
-      } else {
-        return -1;
-      }
-      return 0;
-    };
-
-  
   var maybeCStringToJsString = (cString) => {
       // "cString > 2" checks if the input is a number, and isn't of the special
       // values we accept here, EMSCRIPTEN_EVENT_TARGET_* (which map to 0, 1, 2).
@@ -4376,10 +4374,6 @@ function dbg(text) {
     };
 
   
-  var stringToUTF8 = (str, outPtr, maxBytesToWrite) => {
-      assert(typeof maxBytesToWrite == 'number', 'stringToUTF8(str, outPtr, maxBytesToWrite) is missing the third parameter that specifies the length of the output buffer!');
-      return stringToUTF8Array(str, HEAPU8, outPtr, maxBytesToWrite);
-    };
   var fillGamepadEventData = (eventStruct, e) => {
       HEAPF64[((eventStruct)>>3)] = e.timestamp;
       for (var i = 0; i < e.axes.length; ++i) {
@@ -4436,27 +4430,6 @@ function dbg(text) {
       // N.B. Do not call emscripten_get_num_gamepads() unless having first called emscripten_sample_gamepad_data(), and that has returned EMSCRIPTEN_RESULT_SUCCESS.
       // Otherwise the following line will throw an exception.
       return JSEvents.lastGamepadState.length;
-    };
-
-  
-  var fillPointerlockChangeEventData = (eventStruct) => {
-      var pointerLockElement = document.pointerLockElement || document.mozPointerLockElement || document.webkitPointerLockElement || document.msPointerLockElement;
-      var isPointerlocked = !!pointerLockElement;
-      // Assigning a boolean to HEAP32 with expected type coercion.
-      /** @suppress{checkTypes} */
-      HEAP32[((eventStruct)>>2)] = isPointerlocked;
-      var nodeName = JSEvents.getNodeNameForTarget(pointerLockElement);
-      var id = (pointerLockElement && pointerLockElement.id) ? pointerLockElement.id : '';
-      stringToUTF8(nodeName, eventStruct + 4, 128);
-      stringToUTF8(id, eventStruct + 132, 128);
-    };
-  /** @suppress {missingProperties} */
-  var _emscripten_get_pointerlock_status = (pointerlockStatus) => {
-      if (pointerlockStatus) fillPointerlockChangeEventData(pointerlockStatus);
-      if (!document.body || (!document.body.requestPointerLock && !document.body.mozRequestPointerLock && !document.body.webkitRequestPointerLock && !document.body.msRequestPointerLock)) {
-        return -1;
-      }
-      return 0;
     };
 
   var webgl_enable_ANGLE_instanced_arrays = (ctx) => {
@@ -6481,30 +6454,6 @@ function dbg(text) {
 
   var _emscripten_memcpy_big = (dest, src, num) => HEAPU8.copyWithin(dest, src, src + num);
 
-  
-  
-  var _emscripten_request_pointerlock = (target, deferUntilInEventHandler) => {
-      target = findEventTarget(target);
-      if (!target) return -4;
-      if (!target.requestPointerLock
-        ) {
-        return -1;
-      }
-  
-      var canPerformRequests = JSEvents.canPerformEventHandlerRequests();
-  
-      // Queue this function call if we're not currently in an event handler and the user saw it appropriate to do so.
-      if (!canPerformRequests) {
-        if (deferUntilInEventHandler) {
-          JSEvents.deferCall(requestPointerLock, 2 /* priority below fullscreen */, [target]);
-          return 1;
-        }
-        return -2;
-      }
-  
-      return requestPointerLock(target);
-    };
-
   var getHeapMax = () =>
       HEAPU8.length;
   
@@ -6675,50 +6624,6 @@ function dbg(text) {
       if (!navigator.getGamepads && !navigator.webkitGetGamepads) return -1;
       return registerGamepadEventCallback(2, userData, useCapture, callbackfunc, 27, "gamepaddisconnected", targetThread);
     };
-
-  
-  
-  
-  var registerKeyEventCallback = (target, userData, useCapture, callbackfunc, eventTypeId, eventTypeString, targetThread) => {
-      if (!JSEvents.keyEvent) JSEvents.keyEvent = _malloc(176);
-  
-      var keyEventHandlerFunc = (e) => {
-        assert(e);
-  
-        var keyEventData = JSEvents.keyEvent;
-        HEAPF64[((keyEventData)>>3)] = e.timeStamp;
-  
-        var idx = keyEventData >> 2;
-  
-        HEAP32[idx + 2] = e.location;
-        HEAP32[idx + 3] = e.ctrlKey;
-        HEAP32[idx + 4] = e.shiftKey;
-        HEAP32[idx + 5] = e.altKey;
-        HEAP32[idx + 6] = e.metaKey;
-        HEAP32[idx + 7] = e.repeat;
-        HEAP32[idx + 8] = e.charCode;
-        HEAP32[idx + 9] = e.keyCode;
-        HEAP32[idx + 10] = e.which;
-        stringToUTF8(e.key || '', keyEventData + 44, 32);
-        stringToUTF8(e.code || '', keyEventData + 76, 32);
-        stringToUTF8(e.char || '', keyEventData + 108, 32);
-        stringToUTF8(e.locale || '', keyEventData + 140, 32);
-  
-        if (((a1, a2, a3) => dynCall_iiii.apply(null, [callbackfunc, a1, a2, a3]))(eventTypeId, keyEventData, userData)) e.preventDefault();
-      };
-  
-      var eventHandler = {
-        target: findEventTarget(target),
-        allowsDeferredCalls: true,
-        eventTypeString,
-        callbackfunc,
-        handlerFunc: keyEventHandlerFunc,
-        useCapture
-      };
-      return JSEvents.registerOrRemoveHandler(eventHandler);
-    };
-  var _emscripten_set_keydown_callback_on_thread = (target, userData, useCapture, callbackfunc, targetThread) =>
-      registerKeyEventCallback(target, userData, useCapture, callbackfunc, 2, "keydown", targetThread);
 
   
   var handleException = (e) => {
@@ -7654,6 +7559,11 @@ function dbg(text) {
   var _emscripten_set_touchstart_callback_on_thread = (target, userData, useCapture, callbackfunc, targetThread) =>
       registerTouchEventCallback(target, userData, useCapture, callbackfunc, 22, "touchstart", targetThread);
 
+  
+  var _emscripten_set_window_title = (title) => {
+      setWindowTitle(UTF8ToString(title));
+    };
+
   var _emscripten_sleep = (ms) => {
       // emscripten_sleep() does not return a value, but we still need a |return|
       // here for stack switching support (ASYNCIFY=2). In that mode this function
@@ -7761,6 +7671,7 @@ function dbg(text) {
     return e.errno;
   }
   }
+
 
 
 
@@ -8817,13 +8728,6 @@ function dbg(text) {
 
   var _glfwSwapBuffers = (winid) => GLFW.swapBuffers(winid);
 
-  
-  var _glfwSwapInterval = (interval) => {
-      interval = Math.abs(interval); // GLFW uses negative values to enable GLX_EXT_swap_control_tear, which we don't have, so just treat negative and positive the same.
-      if (interval == 0) _emscripten_set_main_loop_timing(0, 0);
-      else _emscripten_set_main_loop_timing(1, interval);
-    };
-
   var _glfwTerminate = () => {
       window.removeEventListener("gamepadconnected", GLFW.onGamepadConnected, true);
       window.removeEventListener("gamepaddisconnected", GLFW.onGamepadDisconnected, true);
@@ -9356,17 +9260,16 @@ function checkIncomingModuleAPI() {
 var wasmImports = {
   __assert_fail: ___assert_fail,
   __syscall_fcntl64: ___syscall_fcntl64,
+  __syscall_getcwd: ___syscall_getcwd,
   __syscall_ioctl: ___syscall_ioctl,
   __syscall_openat: ___syscall_openat,
   _emscripten_get_now_is_monotonic: __emscripten_get_now_is_monotonic,
   abort: _abort,
   emscripten_date_now: _emscripten_date_now,
-  emscripten_exit_pointerlock: _emscripten_exit_pointerlock,
   emscripten_get_element_css_size: _emscripten_get_element_css_size,
   emscripten_get_gamepad_status: _emscripten_get_gamepad_status,
   emscripten_get_now: _emscripten_get_now,
   emscripten_get_num_gamepads: _emscripten_get_num_gamepads,
-  emscripten_get_pointerlock_status: _emscripten_get_pointerlock_status,
   emscripten_glActiveTexture: _emscripten_glActiveTexture,
   emscripten_glAttachShader: _emscripten_glAttachShader,
   emscripten_glBeginQueryEXT: _emscripten_glBeginQueryEXT,
@@ -9529,7 +9432,6 @@ var wasmImports = {
   emscripten_glVertexAttribPointer: _emscripten_glVertexAttribPointer,
   emscripten_glViewport: _emscripten_glViewport,
   emscripten_memcpy_big: _emscripten_memcpy_big,
-  emscripten_request_pointerlock: _emscripten_request_pointerlock,
   emscripten_resize_heap: _emscripten_resize_heap,
   emscripten_run_script: _emscripten_run_script,
   emscripten_sample_gamepad_data: _emscripten_sample_gamepad_data,
@@ -9537,12 +9439,12 @@ var wasmImports = {
   emscripten_set_fullscreenchange_callback_on_thread: _emscripten_set_fullscreenchange_callback_on_thread,
   emscripten_set_gamepadconnected_callback_on_thread: _emscripten_set_gamepadconnected_callback_on_thread,
   emscripten_set_gamepaddisconnected_callback_on_thread: _emscripten_set_gamepaddisconnected_callback_on_thread,
-  emscripten_set_keydown_callback_on_thread: _emscripten_set_keydown_callback_on_thread,
   emscripten_set_main_loop: _emscripten_set_main_loop,
   emscripten_set_touchcancel_callback_on_thread: _emscripten_set_touchcancel_callback_on_thread,
   emscripten_set_touchend_callback_on_thread: _emscripten_set_touchend_callback_on_thread,
   emscripten_set_touchmove_callback_on_thread: _emscripten_set_touchmove_callback_on_thread,
   emscripten_set_touchstart_callback_on_thread: _emscripten_set_touchstart_callback_on_thread,
+  emscripten_set_window_title: _emscripten_set_window_title,
   emscripten_sleep: _emscripten_sleep,
   exit: _exit,
   fd_close: _fd_close,
@@ -9593,6 +9495,7 @@ var wasmImports = {
   glReadPixels: _glReadPixels,
   glShaderSource: _glShaderSource,
   glTexImage2D: _glTexImage2D,
+  glTexParameterf: _glTexParameterf,
   glTexParameteri: _glTexParameteri,
   glUniform1i: _glUniform1i,
   glUniform4f: _glUniform4f,
@@ -9621,7 +9524,6 @@ var wasmImports = {
   glfwSetWindowShouldClose: _glfwSetWindowShouldClose,
   glfwSetWindowSizeCallback: _glfwSetWindowSizeCallback,
   glfwSwapBuffers: _glfwSwapBuffers,
-  glfwSwapInterval: _glfwSwapInterval,
   glfwTerminate: _glfwTerminate,
   glfwWindowHint: _glfwWindowHint
 };
@@ -9631,8 +9533,8 @@ var ___wasm_call_ctors = createExportWrapper('__wasm_call_ctors');
 var _main = Module['_main'] = createExportWrapper('__main_argc_argv');
 var _malloc = createExportWrapper('malloc');
 var _free = createExportWrapper('free');
-var ___errno_location = createExportWrapper('__errno_location');
 var _fflush = Module['_fflush'] = createExportWrapper('fflush');
+var ___errno_location = createExportWrapper('__errno_location');
 var _emscripten_stack_init = () => (_emscripten_stack_init = wasmExports['emscripten_stack_init'])();
 var _emscripten_stack_get_free = () => (_emscripten_stack_get_free = wasmExports['emscripten_stack_get_free'])();
 var _emscripten_stack_get_base = () => (_emscripten_stack_get_base = wasmExports['emscripten_stack_get_base'])();
@@ -9642,13 +9544,13 @@ var stackRestore = createExportWrapper('stackRestore');
 var stackAlloc = createExportWrapper('stackAlloc');
 var _emscripten_stack_get_current = () => (_emscripten_stack_get_current = wasmExports['emscripten_stack_get_current'])();
 var dynCall_v = Module['dynCall_v'] = createExportWrapper('dynCall_v');
-var dynCall_iiii = Module['dynCall_iiii'] = createExportWrapper('dynCall_iiii');
 var dynCall_vii = Module['dynCall_vii'] = createExportWrapper('dynCall_vii');
 var dynCall_viii = Module['dynCall_viii'] = createExportWrapper('dynCall_viii');
 var dynCall_viiiii = Module['dynCall_viiiii'] = createExportWrapper('dynCall_viiiii');
 var dynCall_viiii = Module['dynCall_viiii'] = createExportWrapper('dynCall_viiii');
 var dynCall_vidd = Module['dynCall_vidd'] = createExportWrapper('dynCall_vidd');
 var dynCall_ii = Module['dynCall_ii'] = createExportWrapper('dynCall_ii');
+var dynCall_iiii = Module['dynCall_iiii'] = createExportWrapper('dynCall_iiii');
 var dynCall_vi = Module['dynCall_vi'] = createExportWrapper('dynCall_vi');
 var dynCall_vffff = Module['dynCall_vffff'] = createExportWrapper('dynCall_vffff');
 var dynCall_vf = Module['dynCall_vf'] = createExportWrapper('dynCall_vf');
@@ -9671,7 +9573,8 @@ var _asyncify_start_unwind = createExportWrapper('asyncify_start_unwind');
 var _asyncify_stop_unwind = createExportWrapper('asyncify_stop_unwind');
 var _asyncify_start_rewind = createExportWrapper('asyncify_start_rewind');
 var _asyncify_stop_rewind = createExportWrapper('asyncify_stop_rewind');
-
+var ___start_em_js = Module['___start_em_js'] = 83764;
+var ___stop_em_js = Module['___stop_em_js'] = 83839;
 
 // include: postamble.js
 // === Auto-generated postamble setup entry stuff ===
@@ -9779,6 +9682,7 @@ var missingLibrarySymbols = [
   'stringToUTF32',
   'lengthBytesUTF32',
   'writeArrayToMemory',
+  'registerKeyEventCallback',
   'findCanvasEventTarget',
   'registerWheelEventCallback',
   'registerUiEventCallback',
@@ -9798,8 +9702,10 @@ var missingLibrarySymbols = [
   'setLetterbox',
   'softFullscreenResizeWebGLRenderTarget',
   'doRequestFullscreen',
+  'fillPointerlockChangeEventData',
   'registerPointerlockChangeEventCallback',
   'registerPointerlockErrorEventCallback',
+  'requestPointerLock',
   'fillVisibilityChangeEventData',
   'registerVisibilityChangeEventCallback',
   'registerBeforeUnloadEventCallback',
@@ -9919,7 +9825,6 @@ var unexportedSymbols = [
   'stringToNewUTF8',
   'stringToUTF8OnStack',
   'JSEvents',
-  'registerKeyEventCallback',
   'specialHTMLTargets',
   'maybeCStringToJsString',
   'findEventTarget',
@@ -9930,8 +9835,6 @@ var unexportedSymbols = [
   'registerFullscreenChangeEventCallback',
   'currentFullscreenStrategy',
   'restoreOldWindowedStyle',
-  'fillPointerlockChangeEventData',
-  'requestPointerLock',
   'registerTouchEventCallback',
   'fillGamepadEventData',
   'registerGamepadEventCallback',
