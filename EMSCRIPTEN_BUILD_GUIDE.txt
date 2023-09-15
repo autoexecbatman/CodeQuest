@@ -1,0 +1,37 @@
+General Guidelines To Consider
+
+Introduction:
+This document outlines the steps to set up and execute the Emscripten build process inside a Docker container. Follow the guidelines in sequential order.
+
+Note/Troubleshooting:
+- Ensure that Docker is running before executing any docker run command.
+- If you encounter any permissions issue, check the user permissions for the mounted directories.
+- Ensure that the build_emscripten image is available locally or fetched from the respective registry.
+
+1. Prepare and run the Docker container:
+# Run the Docker container and mount your project directory
+docker run -v ${PWD}/../:/app -it build_emscripten /bin/sh
+
+2. Set up the build script:
+# Convert line endings to ensure the script runs smoothly in Unix environments
+sed -i 's/\r$//' /app/build_tools/emscripten_build.sh
+
+# Make the build script executable
+chmod +x /app/build_tools/emscripten_build.sh
+
+3. Build the project:
+# Execute the Emscripten build script
+/app/build_tools/emscripten_build.sh
+
+4. Inspect the environment (if necessary):
+# Check the current directory
+pwd
+
+# List the contents of /app directory
+ls -la /app
+
+# If /app/build_tools/ exists, list its contents
+ls -la /app/build_tools/
+
+# Command to build raylib with emscripten via docker
+emcc -o main.html /app/projects/main.cpp -Os -Wall /app/libs/Raylib3/bin/Emscripten/libraylib.a -I /app/libs/Raylib3/include/ -s USE_GLFW=3 -s ASYNCIFY --shell-file /app/libs/Raylib3/shell.html -DPLATFORM_WEB

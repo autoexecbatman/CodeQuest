@@ -1,6 +1,5 @@
- # Point at any base image that you find suitable to extend.
- FROM emscripten/emsdk:latest
+FROM emscripten/emsdk:latest
 
- RUN apt update && apt install -y ninja-build
+RUN apt update && apt install -y ninja-build
 
- CMD ["/bin/sh", "/app/build_tools/emscripten_build.sh"]
+CMD ["/bin/sh", "./emscripten_build.sh"]
