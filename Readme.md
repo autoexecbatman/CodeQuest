@@ -44,7 +44,7 @@ Navigate to emscripten build folder
 open powershell (make sure to setup emscripten)
 `emrun <your_project_name>.html`
 
-# Automated Build and Deploy to GHPages
+## Automated Build and Deploy to GHPages
 This repo contains a github action that will automaticly build and publish your projects to the gh-pages branch.
 
 To view your published projects, Github Pages will need to be enabled via your repository settings.
