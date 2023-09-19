@@ -2,55 +2,60 @@
 
 ## About
 
-This is a "Starter" repo for Raylib projects. Web builds are automaticly triggered via Github actions and Deployed to Github Pages.
+This repository serves as a "starter kit" for Raylib projects. Web builds are automatically triggered through GitHub Actions and deployed to GitHub Pages.
 
-Libraries are Pre-Compiled for:
- - Visual Studio 2022
- - Emscripten
+The libraries come pre-compiled for:
+- Visual Studio 2022
+- Emscripten
 
-## Creating a new Project
-1. Duplicate the `HelloRaylib` from the `projects` folder.
-2. Rename the folder to match your project name.
-3. Edit the `CMakeLists.txt` file in your new project folder.
+## Creating a New Project
+
+1. Duplicate the `HelloRaylib` folder within the `projects` directory.
+2. Rename this folder to match the name of your new project.
+3. Open the `CMakeLists.txt` file in your new project folder and edit it as follows:
     ```CMake
     project("<your_project_name>")
     ```
-4. Edit `CMakeLists.txt` in the **root directory** to include the new project.
+4. Open the `CMakeLists.txt` file in the **root directory** and add your new project there:
     ```CMake
     # Include sub-projects
     # ====================
-    add_subdirectory ("projects/HelloRaylib")
-    add_subdirectory ("projects/<your_project_name>")
+    add_subdirectory("projects/HelloRaylib")
+    add_subdirectory("projects/<your_project_name>")
     # ====================
     ```
 
-## Building on windows
-1. Create a folder for the Visual Studio files.
- - `mkdir vs`
-2. Navigate to the folder.
- - `cd vs`
-3. Open a powershell window in the folder.(or another shell)
-4. Use cmake to build the solution
- - `cmake .. -G "Visual Studio 17 2022"`
+## Building on Windows
 
-## Building for web (locally)
-**this step is optional**
+1. Create a folder for the Visual Studio files:
+    - `mkdir vs`
+2. Navigate to that folder:
+    - `cd vs`
+3. Open a PowerShell window in this folder (or use another shell).
+4. Run the following command to build the solution with CMake:
+    - `cmake .. -G "Visual Studio 17 2022"`
 
-To build the project locally you will need to install `docker for windows` https://hub.docker.com/editions/community/docker-ce-desktop-windows/
+## Building for Web (Locally)
+**NOTE: This step is optional.**
 
-1. make sure `docker desktop` is running
-2. double click on `windows_docker_build_web.bat` <br/>
-this will compile your project with the emscripten toolchain
-3. If no errors have occured - Your game will be available in the `bin/Emscripten/<your_project_name>/` folder
-4. You will need to serve the generated files via a local webserver
- - Navigate to emscripten build folder
-   - `cd bin/Emscripten/<your_project_name>/`
- - open powershell (make sure to setup emscripten)
-   - `emrun <your_project_name>.html`
+To build the project locally, you'll need to install [Docker for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows/).
 
-## Automated Build and Deploy to GHPages
-This repo contains a github action that will automaticly build and publish your projects to the gh-pages branch.
+1. Ensure `Docker Desktop` is running.
+2. Double-click on `windows_docker_build_web.bat`. This will compile your project using the Emscripten toolchain.
+3. If the build is successful, your game will be located in the `bin/Emscripten/<your_project_name>/` folder.
+4. Serve the generated files via a local web server:
+    - Navigate to the Emscripten build folder:
+        - `cd bin/Emscripten/<your_project_name>/`
+    - Open PowerShell (make sure Emscripten is set up):
+        - `emrun <your_project_name>.html`
 
-To view your published projects, Github Pages will need to be enabled via your repository settings.
+## Automated Build and Deploy to GitHub Pages
 
-[Link to a sample project on GHPages](https://autoexecbatman.github.io/EmscriptenHelloRaylib---Copy-2-/Pong/Pong.html)
+This repository includes a GitHub Action that will automatically build and publish your projects to the `gh-pages` branch. 
+
+To view your published projects, enable GitHub Pages in your repository settings.
+
+**Sample Project on GitHub Pages:**  
+[Link to a Sample Project](https://autoexecbatman.github.io/EmscriptenHelloRaylib---Copy-2-/Pong/Pong.html)  
+**URL Format:**  
+`https://<github-username>.github.io/RepositoryName/Project/Project.html`
