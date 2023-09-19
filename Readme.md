@@ -44,9 +44,9 @@ this will compile your project with the emscripten toolchain
 3. If no errors have occured - Your game will be available in the `bin/Emscripten/<your_project_name>/` folder
 4. You will need to serve the generated files via a local webserver
  - Navigate to emscripten build folder
-  - `cd bin/Emscripten/<your_project_name>/`
+   - `cd bin/Emscripten/<your_project_name>/`
  - open powershell (make sure to setup emscripten)
-  - `emrun <your_project_name>.html`
+   - `emrun <your_project_name>.html`
 
 ## Automated Build and Deploy to GHPages
 This repo contains a github action that will automaticly build and publish your projects to the gh-pages branch.
