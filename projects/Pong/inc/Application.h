@@ -1,6 +1,6 @@
 #pragma once
 
-class Game;
+// class Game;
 
 class Application
 {
@@ -16,6 +16,6 @@ public:
 protected:
 private:
 
-	Game* m_game = nullptr;
+	/*Game* m_game = nullptr;*/
 };
 
