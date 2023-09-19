@@ -39,7 +39,9 @@ To build the project locially you will need to install `docker for windows` http
 this will compile your project with the emscripten toolchain.
 3. If no errors have occured - Your game will be available in the `bin/Emscripten/<your_project_name>/` folder.
 4. You will need to serve the generated files via a local webserver.
+Navigate to emscripten build folder
 `cd bin/Emscripten/<your_project_name>/`
+open powershell (make sure to setup emscripten)
 `emrun <your_project_name>.html`
 
 # Automated Build and Deploy to GHPages
