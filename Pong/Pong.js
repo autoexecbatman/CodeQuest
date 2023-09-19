@@ -123,6 +123,64 @@ var REMOTE_PACKAGE_SIZE = metadata['remote_package_size'];
         if (!check) throw msg + new Error().stack;
       }
 Module['FS_createPath']("/", "assets", true, true);
+Module['FS_createPath']("/assets", "sprites", true, true);
+Module['FS_createPath']("/assets/sprites", "Enemy", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy", "Orc Crew", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Orc Crew", "Orc - Rogue", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Orc Crew/Orc - Rogue", "Death", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Orc Crew/Orc - Rogue", "Idle", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Orc Crew/Orc - Rogue", "Run", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Orc Crew", "Orc - Shaman", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Orc Crew/Orc - Shaman", "Death", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Orc Crew/Orc - Shaman", "Idle", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Orc Crew/Orc - Shaman", "Run", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Orc Crew", "Orc - Warrior", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Orc Crew/Orc - Warrior", "Death", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Orc Crew/Orc - Warrior", "Idle", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Orc Crew/Orc - Warrior", "Run", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Orc Crew", "Orc", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Orc Crew/Orc", "Death", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Orc Crew/Orc", "Idle", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Orc Crew/Orc", "Run", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy", "Skeleton Crew", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Skeleton Crew", "Skeleton - Base", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Skeleton Crew/Skeleton - Base", "Death", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Skeleton Crew/Skeleton - Base", "Idle", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Skeleton Crew/Skeleton - Base", "Run", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Skeleton Crew", "Skeleton - Mage", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Skeleton Crew/Skeleton - Mage", "Death", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Skeleton Crew/Skeleton - Mage", "Idle", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Skeleton Crew/Skeleton - Mage", "Run", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Skeleton Crew", "Skeleton - Rogue", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Skeleton Crew/Skeleton - Rogue", "Death", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Skeleton Crew/Skeleton - Rogue", "Idle", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Skeleton Crew/Skeleton - Rogue", "Run", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Skeleton Crew", "Skeleton - Warrior", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Skeleton Crew/Skeleton - Warrior", "Death", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Skeleton Crew/Skeleton - Warrior", "Idle", true, true);
+Module['FS_createPath']("/assets/sprites/Enemy/Skeleton Crew/Skeleton - Warrior", "Run", true, true);
+Module['FS_createPath']("/assets/sprites", "Environment", true, true);
+Module['FS_createPath']("/assets/sprites/Environment", "Dungeon Prison", true, true);
+Module['FS_createPath']("/assets/sprites/Environment/Dungeon Prison", "Assets", true, true);
+Module['FS_createPath']("/assets/sprites/Environment", "Green Woods", true, true);
+Module['FS_createPath']("/assets/sprites/Environment/Green Woods", "Assets", true, true);
+Module['FS_createPath']("/assets/sprites", "Heroes", true, true);
+Module['FS_createPath']("/assets/sprites/Heroes", "Knight", true, true);
+Module['FS_createPath']("/assets/sprites/Heroes/Knight", "Death", true, true);
+Module['FS_createPath']("/assets/sprites/Heroes/Knight", "Idle", true, true);
+Module['FS_createPath']("/assets/sprites/Heroes/Knight", "Run", true, true);
+Module['FS_createPath']("/assets/sprites/Heroes", "Rogue", true, true);
+Module['FS_createPath']("/assets/sprites/Heroes/Rogue", "Death", true, true);
+Module['FS_createPath']("/assets/sprites/Heroes/Rogue", "Idle", true, true);
+Module['FS_createPath']("/assets/sprites/Heroes/Rogue", "Run", true, true);
+Module['FS_createPath']("/assets/sprites/Heroes", "Wizzard", true, true);
+Module['FS_createPath']("/assets/sprites/Heroes/Wizzard", "Death", true, true);
+Module['FS_createPath']("/assets/sprites/Heroes/Wizzard", "Idle", true, true);
+Module['FS_createPath']("/assets/sprites/Heroes/Wizzard", "Run", true, true);
+Module['FS_createPath']("/assets/sprites", "Weapons", true, true);
+Module['FS_createPath']("/assets/sprites/Weapons", "Bone", true, true);
+Module['FS_createPath']("/assets/sprites/Weapons", "Hands", true, true);
+Module['FS_createPath']("/assets/sprites/Weapons", "Wood", true, true);
 
       /** @constructor */
       function DataRequest(start, end, audio) {
@@ -190,7 +248,7 @@ Module['FS_createPath']("/", "assets", true, true);
     }
 
     }
-    loadPackage({"files": [{"filename": "/assets/.gitkeep", "start": 0, "end": 0}], "remote_package_size": 0});
+    loadPackage({"files": [{"filename": "/assets/.gitkeep", "start": 0, "end": 0}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc - Rogue/Death/Death-Sheet.png", "start": 0, "end": 3430}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc - Rogue/Death/Death.aseprite", "start": 3430, "end": 6467}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc - Rogue/Idle/Idle-Sheet.png", "start": 6467, "end": 8081}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc - Rogue/Idle/Idle.aseprite", "start": 8081, "end": 10487}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc - Rogue/Run/Run-Sheet.png", "start": 10487, "end": 13007}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc - Rogue/Run/Run.aseprite", "start": 13007, "end": 21404}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc - Shaman/Death/Death-Sheet.png", "start": 21404, "end": 24181}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc - Shaman/Death/Death.aseprite", "start": 24181, "end": 27487}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc - Shaman/Idle/Idle-Sheet.png", "start": 27487, "end": 29200}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc - Shaman/Idle/Idle.aseprite", "start": 29200, "end": 31648}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc - Shaman/Run/Run-Sheet.png", "start": 31648, "end": 34500}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc - Shaman/Run/Run.aseprite", "start": 34500, "end": 41881}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc - Warrior/Death/Death-Sheet.png", "start": 41881, "end": 46297}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc - Warrior/Death/Death.aseprite", "start": 46297, "end": 50428}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc - Warrior/Idle/Idle-Sheet.png", "start": 50428, "end": 52503}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc - Warrior/Idle/Idle.aseprite", "start": 52503, "end": 55225}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc - Warrior/Run/Run-Sheet.png", "start": 55225, "end": 58473}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc - Warrior/Run/Run.aseprite", "start": 58473, "end": 67211}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc/Death/Death-Sheet.png", "start": 67211, "end": 70291}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc/Death/Death.aseprite", "start": 70291, "end": 73044}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc/Idle/Idle-Sheet.png", "start": 73044, "end": 74588}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc/Idle/Idle.aseprite", "start": 74588, "end": 76883}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc/Run/Run-Sheet.png", "start": 76883, "end": 79326}, {"filename": "/assets/sprites/Enemy/Orc Crew/Orc/Run/Run.aseprite", "start": 79326, "end": 85629}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Base/Death/Death-Sheet.png", "start": 85629, "end": 89017}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Base/Death/Death.aseprite", "start": 89017, "end": 92077}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Base/Idle/Idle-Sheet.png", "start": 92077, "end": 93325}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Base/Idle/Idle.aseprite", "start": 93325, "end": 95264}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Base/Run/Run-Sheet.png", "start": 95264, "end": 97200}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Base/Run/Run.aseprite", "start": 97200, "end": 102986}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Mage/Death/Death-Sheet.png", "start": 102986, "end": 105867}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Mage/Death/Death.aseprite", "start": 105867, "end": 108566}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Mage/Idle/Idle-Sheet.png", "start": 108566, "end": 110019}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Mage/Idle/Idle.aseprite", "start": 110019, "end": 112329}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Mage/Run/Run-Sheet.png", "start": 112329, "end": 114547}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Mage/Run/Run.aseprite", "start": 114547, "end": 119663}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Rogue/Death/Death-Sheet.png", "start": 119663, "end": 122625}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Rogue/Death/Death.aseprite", "start": 122625, "end": 125463}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Rogue/Idle/Idle-Sheet.png", "start": 125463, "end": 126895}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Rogue/Idle/Idle.aseprite", "start": 126895, "end": 129046}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Rogue/Run/Run-Sheet.png", "start": 129046, "end": 131360}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Rogue/Run/Run.aseprite", "start": 131360, "end": 140483}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Warrior/Death/Death-Sheet.png", "start": 140483, "end": 143391}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Warrior/Death/Death.aseprite", "start": 143391, "end": 146338}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Warrior/Idle/Idle-Sheet.png", "start": 146338, "end": 147844}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Warrior/Idle/Idle.aseprite", "start": 147844, "end": 150115}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Warrior/Run/Run-Sheet.png", "start": 150115, "end": 152610}, {"filename": "/assets/sprites/Enemy/Skeleton Crew/Skeleton - Warrior/Run/Run.aseprite", "start": 152610, "end": 159919}, {"filename": "/assets/sprites/Environment/Dungeon Prison/Assets/Props.aseprite", "start": 159919, "end": 170426}, {"filename": "/assets/sprites/Environment/Dungeon Prison/Assets/Props.png", "start": 170426, "end": 187443}, {"filename": "/assets/sprites/Environment/Dungeon Prison/Assets/Tiles.aseprite", "start": 187443, "end": 201798}, {"filename": "/assets/sprites/Environment/Dungeon Prison/Assets/Tiles.png", "start": 201798, "end": 222911}, {"filename": "/assets/sprites/Environment/Green Woods/Assets/Props.aseprite", "start": 222911, "end": 229494}, {"filename": "/assets/sprites/Environment/Green Woods/Assets/Props.png", "start": 229494, "end": 241491}, {"filename": "/assets/sprites/Environment/Green Woods/Assets/Tiles.aseprite", "start": 241491, "end": 253201}, {"filename": "/assets/sprites/Environment/Green Woods/Assets/Tiles.png", "start": 253201, "end": 274412}, {"filename": "/assets/sprites/Environment/Green Woods/Assets/Trees.aseprite", "start": 274412, "end": 289476}, {"filename": "/assets/sprites/Environment/Green Woods/Assets/Trees.png", "start": 289476, "end": 312505}, {"filename": "/assets/sprites/Heroes/Knight/Death/Death-Sheet.png", "start": 312505, "end": 314448}, {"filename": "/assets/sprites/Heroes/Knight/Death/Death.aseprite", "start": 314448, "end": 317003}, {"filename": "/assets/sprites/Heroes/Knight/Idle/Idle-Sheet.png", "start": 317003, "end": 318105}, {"filename": "/assets/sprites/Heroes/Knight/Idle/Idle.aseprite", "start": 318105, "end": 320099}, {"filename": "/assets/sprites/Heroes/Knight/Run/Run-Sheet.png", "start": 320099, "end": 322032}, {"filename": "/assets/sprites/Heroes/Knight/Run/Run.aseprite", "start": 322032, "end": 328736}, {"filename": "/assets/sprites/Heroes/Rogue/Death/Death-Sheet.png", "start": 328736, "end": 331386}, {"filename": "/assets/sprites/Heroes/Rogue/Death/Death.aseprite", "start": 331386, "end": 334159}, {"filename": "/assets/sprites/Heroes/Rogue/Idle/Idle-Sheet.png", "start": 334159, "end": 335501}, {"filename": "/assets/sprites/Heroes/Rogue/Idle/Idle.aseprite", "start": 335501, "end": 337825}, {"filename": "/assets/sprites/Heroes/Rogue/Run/Run-Sheet.png", "start": 337825, "end": 340260}, {"filename": "/assets/sprites/Heroes/Rogue/Run/Run.aseprite", "start": 340260, "end": 347370}, {"filename": "/assets/sprites/Heroes/Wizzard/Death/Death-Sheet.png", "start": 347370, "end": 350835}, {"filename": "/assets/sprites/Heroes/Wizzard/Death/Death.aseprite", "start": 350835, "end": 353937}, {"filename": "/assets/sprites/Heroes/Wizzard/Idle/Idle-Sheet.png", "start": 353937, "end": 355444}, {"filename": "/assets/sprites/Heroes/Wizzard/Idle/Idle.aseprite", "start": 355444, "end": 357851}, {"filename": "/assets/sprites/Heroes/Wizzard/Run/Run-Sheet.png", "start": 357851, "end": 360398}, {"filename": "/assets/sprites/Heroes/Wizzard/Run/Run.aseprite", "start": 360398, "end": 366596}, {"filename": "/assets/sprites/Terms.txt", "start": 366596, "end": 367867}, {"filename": "/assets/sprites/Weapons/Bone/Bone.aseprite", "start": 367867, "end": 372348}, {"filename": "/assets/sprites/Weapons/Bone/Bone.png", "start": 372348, "end": 379633}, {"filename": "/assets/sprites/Weapons/Hands/Hands.aseprite", "start": 379633, "end": 381247}, {"filename": "/assets/sprites/Weapons/Hands/Hands.png", "start": 381247, "end": 382040}, {"filename": "/assets/sprites/Weapons/Wood/Wood.aseprite", "start": 382040, "end": 386335}, {"filename": "/assets/sprites/Weapons/Wood/Wood.png", "start": 386335, "end": 392814}], "remote_package_size": 392814});
 
   })();
 
@@ -246,8 +304,7 @@ function locateFile(path) {
 // Hooks that are implemented differently in different runtime environments.
 var read_,
     readAsync,
-    readBinary,
-    setWindowTitle;
+    readBinary;
 
 if (ENVIRONMENT_IS_NODE) {
   if (typeof process == 'undefined' || !process.release || process.release.name !== 'node') throw new Error('not compiled for this environment (did you build to HTML and try to run it not on the web, or set ENVIRONMENT to something - like node - and run it someplace else - like on the web?)');
@@ -457,8 +514,6 @@ read_ = (url) => {
 
 // end include: web_or_worker_shell_read.js
   }
-
-  setWindowTitle = (title) => document.title = title;
 } else
 {
   throw new Error('environment detection error');
@@ -494,7 +549,7 @@ assert(typeof Module['filePackagePrefixURL'] == 'undefined', 'Module.filePackage
 assert(typeof Module['read'] == 'undefined', 'Module.read option was removed (modify read_ in JS)');
 assert(typeof Module['readAsync'] == 'undefined', 'Module.readAsync option was removed (modify readAsync in JS)');
 assert(typeof Module['readBinary'] == 'undefined', 'Module.readBinary option was removed (modify readBinary in JS)');
-assert(typeof Module['setWindowTitle'] == 'undefined', 'Module.setWindowTitle option was removed (modify setWindowTitle in JS)');
+assert(typeof Module['setWindowTitle'] == 'undefined', 'Module.setWindowTitle option was removed (modify emscripten_set_window_title in JS)');
 assert(typeof Module['TOTAL_MEMORY'] == 'undefined', 'Module.TOTAL_MEMORY has been renamed Module.INITIAL_MEMORY');
 legacyModuleProp('asm', 'wasmExports');
 legacyModuleProp('read', 'read_');
@@ -602,12 +657,6 @@ assert(typeof Int32Array != 'undefined' && typeof Float64Array !== 'undefined' &
 assert(!Module['wasmMemory'], 'Use of `wasmMemory` detected.  Use -sIMPORTED_MEMORY to define wasmMemory externally');
 assert(!Module['INITIAL_MEMORY'], 'Detected runtime INITIAL_MEMORY setting.  Use -sIMPORTED_MEMORY to define wasmMemory dynamically');
 
-// include: runtime_init_table.js
-// In regular non-RELOCATABLE mode the table is exported
-// from the wasm module and this will be assigned once
-// the exports are available.
-var wasmTable;
-// end include: runtime_init_table.js
 // include: runtime_stack_check.js
 // Initializes the stack cookie. Called at the startup of main and at the startup of each thread in pthreads mode.
 function writeStackCookie() {
@@ -1008,11 +1057,10 @@ function createWasm() {
   // performing other necessary setup
   /** @param {WebAssembly.Module=} module*/
   function receiveInstance(instance, module) {
-    var exports = instance.exports;
+    wasmExports = instance.exports;
 
-    exports = Asyncify.instrumentWasmExports(exports);
+    wasmExports = Asyncify.instrumentWasmExports(wasmExports);
 
-    wasmExports = exports;
     
 
     wasmMemory = wasmExports['memory'];
@@ -1024,14 +1072,10 @@ function createWasm() {
     //assert(wasmMemory.buffer.byteLength === 16777216);
     updateMemoryViews();
 
-    wasmTable = wasmExports['__indirect_function_table'];
-    
-    assert(wasmTable, "table not found in wasm exports");
-
     addOnInit(wasmExports['__wasm_call_ctors']);
 
     removeRunDependency('wasm-instantiate');
-    return exports;
+    return wasmExports;
   }
   // wait for the pthread pool (if any)
   addRunDependency('wasm-instantiate');
@@ -1328,6 +1372,89 @@ function GetCanvasHeight() { return canvas.clientHeight; }
     };
   var ___assert_fail = (condition, filename, line, func) => {
       abort(`Assertion failed: ${UTF8ToString(condition)}, at: ` + [filename ? UTF8ToString(filename) : 'unknown filename', line, func ? UTF8ToString(func) : 'unknown function']);
+    };
+
+  /** @constructor */
+  function ExceptionInfo(excPtr) {
+      this.excPtr = excPtr;
+      this.ptr = excPtr - 24;
+  
+      this.set_type = function(type) {
+        HEAPU32[(((this.ptr)+(4))>>2)] = type;
+      };
+  
+      this.get_type = function() {
+        return HEAPU32[(((this.ptr)+(4))>>2)];
+      };
+  
+      this.set_destructor = function(destructor) {
+        HEAPU32[(((this.ptr)+(8))>>2)] = destructor;
+      };
+  
+      this.get_destructor = function() {
+        return HEAPU32[(((this.ptr)+(8))>>2)];
+      };
+  
+      this.set_caught = function(caught) {
+        caught = caught ? 1 : 0;
+        HEAP8[(((this.ptr)+(12))>>0)] = caught;
+      };
+  
+      this.get_caught = function() {
+        return HEAP8[(((this.ptr)+(12))>>0)] != 0;
+      };
+  
+      this.set_rethrown = function(rethrown) {
+        rethrown = rethrown ? 1 : 0;
+        HEAP8[(((this.ptr)+(13))>>0)] = rethrown;
+      };
+  
+      this.get_rethrown = function() {
+        return HEAP8[(((this.ptr)+(13))>>0)] != 0;
+      };
+  
+      // Initialize native structure fields. Should be called once after allocated.
+      this.init = function(type, destructor) {
+        this.set_adjusted_ptr(0);
+        this.set_type(type);
+        this.set_destructor(destructor);
+      }
+  
+      this.set_adjusted_ptr = function(adjustedPtr) {
+        HEAPU32[(((this.ptr)+(16))>>2)] = adjustedPtr;
+      };
+  
+      this.get_adjusted_ptr = function() {
+        return HEAPU32[(((this.ptr)+(16))>>2)];
+      };
+  
+      // Get pointer which is expected to be received by catch clause in C++ code. It may be adjusted
+      // when the pointer is casted to some of the exception object base classes (e.g. when virtual
+      // inheritance is used). When a pointer is thrown this method should return the thrown pointer
+      // itself.
+      this.get_exception_ptr = function() {
+        // Work around a fastcomp bug, this code is still included for some reason in a build without
+        // exceptions support.
+        var isPointer = ___cxa_is_pointer_type(this.get_type());
+        if (isPointer) {
+          return HEAPU32[((this.excPtr)>>2)];
+        }
+        var adjusted = this.get_adjusted_ptr();
+        if (adjusted !== 0) return adjusted;
+        return this.excPtr;
+      };
+    }
+  
+  var exceptionLast = 0;
+  
+  var uncaughtExceptionCount = 0;
+  var ___cxa_throw = (ptr, type, destructor) => {
+      var info = new ExceptionInfo(ptr);
+      // Initialize ExceptionInfo content after it was allocated in __cxa_allocate_exception.
+      info.init(type, destructor);
+      exceptionLast = ptr;
+      uncaughtExceptionCount++;
+      assert(false, 'Exception thrown, but exception catching is not enabled. Compile with -sNO_DISABLE_EXCEPTION_CATCHING or -sEXCEPTION_CATCHING_ALLOWED=[..] to catch.');
     };
 
   var setErrNo = (value) => {
@@ -2133,6 +2260,10 @@ function GetCanvasHeight() { return canvas.clientHeight; }
     };
   
   
+  var FS_createDataFile = (parent, name, fileData, canRead, canWrite, canOwn) => {
+      return FS.createDataFile(parent, name, fileData, canRead, canWrite, canOwn);
+    };
+  
   var preloadPlugins = Module['preloadPlugins'] || [];
   var FS_handledByPreloadPlugin = (byteArray, fullname, finish, onerror) => {
       // Ensure plugins are ready.
@@ -2157,7 +2288,7 @@ function GetCanvasHeight() { return canvas.clientHeight; }
         function finish(byteArray) {
           if (preFinish) preFinish();
           if (!dontCreateFile) {
-            FS.createDataFile(parent, name, byteArray, canRead, canWrite, canOwn);
+            FS_createDataFile(parent, name, byteArray, canRead, canWrite, canOwn);
           }
           if (onload) onload();
           removeRunDependency(dep);
@@ -3997,7 +4128,8 @@ function GetCanvasHeight() { return canvas.clientHeight; }
   varargs:undefined,
   get() {
         assert(SYSCALLS.varargs != undefined);
-        var ret = HEAP32[((SYSCALLS.varargs)>>2)];
+        // the `+` prepended here is necessary to convince the JSCompiler that varargs is indeed a number.
+        var ret = HEAP32[((+SYSCALLS.varargs)>>2)];
         SYSCALLS.varargs += 4;
         return ret;
       },
@@ -4198,6 +4330,10 @@ function GetCanvasHeight() { return canvas.clientHeight; }
 
   var nowIsMonotonic = true;;
   var __emscripten_get_now_is_monotonic = () => nowIsMonotonic;
+
+  var _abort = () => {
+      abort('native code called abort()');
+    };
 
   var _emscripten_date_now = () => Date.now();
 
@@ -5140,7 +5276,8 @@ function GetCanvasHeight() { return canvas.clientHeight; }
       var lower = HEAPU32[((ptr)>>2)];
       HEAPU32[(((ptr)+(4))>>2)] = (num - lower)/4294967296;
       var deserialized = (num >= 0) ? readI53FromU64(ptr) : readI53FromI64(ptr);
-      if (deserialized != num) warnOnce(`writeI53ToI64() out of range: serialized JS Number ${num} to Wasm heap as bytes lo=${ptrToString(HEAPU32[ptr/4])}, hi=${ptrToString(HEAPU32[ptr/4+1])}, which deserializes back to ${deserialized} instead!`);
+      var offset = ((ptr)>>2);
+      if (deserialized != num) warnOnce(`writeI53ToI64() out of range: serialized JS Number ${num} to Wasm heap as bytes lo=${ptrToString(HEAPU32[offset])}, hi=${ptrToString(HEAPU32[offset+1])}, which deserializes back to ${deserialized} instead!`);
     };
   
   var emscriptenWebGLGet = (name_, p, type) => {
@@ -6448,7 +6585,7 @@ function GetCanvasHeight() { return canvas.clientHeight; }
   function _glViewport(x0, x1, x2, x3) { GLctx.viewport(x0, x1, x2, x3) }
   var _emscripten_glViewport = _glViewport;
 
-  var _emscripten_memcpy_big = (dest, src, num) => HEAPU8.copyWithin(dest, src, src + num);
+  var _emscripten_memcpy_js = (dest, src, num) => HEAPU8.copyWithin(dest, src, src + num);
 
   var getHeapMax = () =>
       HEAPU8.length;
@@ -6621,257 +6758,6 @@ function GetCanvasHeight() { return canvas.clientHeight; }
       return registerGamepadEventCallback(2, userData, useCapture, callbackfunc, 27, "gamepaddisconnected", targetThread);
     };
 
-  
-  
-  
-  var registerTouchEventCallback = (target, userData, useCapture, callbackfunc, eventTypeId, eventTypeString, targetThread) => {
-      if (!JSEvents.touchEvent) JSEvents.touchEvent = _malloc(1696);
-  
-      target = findEventTarget(target);
-  
-      var touchEventHandlerFunc = (e) => {
-        assert(e);
-        var t, touches = {}, et = e.touches;
-        // To ease marshalling different kinds of touches that browser reports (all touches are listed in e.touches,
-        // only changed touches in e.changedTouches, and touches on target at a.targetTouches), mark a boolean in
-        // each Touch object so that we can later loop only once over all touches we see to marshall over to Wasm.
-  
-        for (var i = 0; i < et.length; ++i) {
-          t = et[i];
-          // Browser might recycle the generated Touch objects between each frame (Firefox on Android), so reset any
-          // changed/target states we may have set from previous frame.
-          t.isChanged = t.onTarget = 0;
-          touches[t.identifier] = t;
-        }
-        // Mark which touches are part of the changedTouches list.
-        for (var i = 0; i < e.changedTouches.length; ++i) {
-          t = e.changedTouches[i];
-          t.isChanged = 1;
-          touches[t.identifier] = t;
-        }
-        // Mark which touches are part of the targetTouches list.
-        for (var i = 0; i < e.targetTouches.length; ++i) {
-          touches[e.targetTouches[i].identifier].onTarget = 1;
-        }
-  
-        var touchEvent = JSEvents.touchEvent;
-        HEAPF64[((touchEvent)>>3)] = e.timeStamp;
-        var idx = touchEvent>>2; // Pre-shift the ptr to index to HEAP32 to save code size
-        HEAP32[idx + 3] = e.ctrlKey;
-        HEAP32[idx + 4] = e.shiftKey;
-        HEAP32[idx + 5] = e.altKey;
-        HEAP32[idx + 6] = e.metaKey;
-        idx += 7; // Advance to the start of the touch array.
-        var targetRect = getBoundingClientRect(target);
-        var numTouches = 0;
-        for (var i in touches) {
-          t = touches[i];
-          HEAP32[idx + 0] = t.identifier;
-          HEAP32[idx + 1] = t.screenX;
-          HEAP32[idx + 2] = t.screenY;
-          HEAP32[idx + 3] = t.clientX;
-          HEAP32[idx + 4] = t.clientY;
-          HEAP32[idx + 5] = t.pageX;
-          HEAP32[idx + 6] = t.pageY;
-          HEAP32[idx + 7] = t.isChanged;
-          HEAP32[idx + 8] = t.onTarget;
-          HEAP32[idx + 9] = t.clientX - targetRect.left;
-          HEAP32[idx + 10] = t.clientY - targetRect.top;
-  
-          idx += 13;
-  
-          if (++numTouches > 31) {
-            break;
-          }
-        }
-        HEAP32[(((touchEvent)+(8))>>2)] = numTouches;
-  
-        if (((a1, a2, a3) => dynCall_iiii.apply(null, [callbackfunc, a1, a2, a3]))(eventTypeId, touchEvent, userData)) e.preventDefault();
-      };
-  
-      var eventHandler = {
-        target,
-        allowsDeferredCalls: eventTypeString == 'touchstart' || eventTypeString == 'touchend',
-        eventTypeString,
-        callbackfunc,
-        handlerFunc: touchEventHandlerFunc,
-        useCapture
-      };
-      return JSEvents.registerOrRemoveHandler(eventHandler);
-    };
-  var _emscripten_set_touchcancel_callback_on_thread = (target, userData, useCapture, callbackfunc, targetThread) =>
-      registerTouchEventCallback(target, userData, useCapture, callbackfunc, 25, "touchcancel", targetThread);
-
-  var _emscripten_set_touchend_callback_on_thread = (target, userData, useCapture, callbackfunc, targetThread) =>
-      registerTouchEventCallback(target, userData, useCapture, callbackfunc, 23, "touchend", targetThread);
-
-  var _emscripten_set_touchmove_callback_on_thread = (target, userData, useCapture, callbackfunc, targetThread) =>
-      registerTouchEventCallback(target, userData, useCapture, callbackfunc, 24, "touchmove", targetThread);
-
-  var _emscripten_set_touchstart_callback_on_thread = (target, userData, useCapture, callbackfunc, targetThread) =>
-      registerTouchEventCallback(target, userData, useCapture, callbackfunc, 22, "touchstart", targetThread);
-
-  var _emscripten_set_main_loop_timing = (mode, value) => {
-      Browser.mainLoop.timingMode = mode;
-      Browser.mainLoop.timingValue = value;
-  
-      if (!Browser.mainLoop.func) {
-        err('emscripten_set_main_loop_timing: Cannot set timing mode for main loop since a main loop does not exist! Call emscripten_set_main_loop first to set one up.');
-        return 1; // Return non-zero on failure, can't set timing mode when there is no main loop.
-      }
-  
-      if (!Browser.mainLoop.running) {
-        
-        Browser.mainLoop.running = true;
-      }
-      if (mode == 0) {
-        Browser.mainLoop.scheduler = function Browser_mainLoop_scheduler_setTimeout() {
-          var timeUntilNextTick = Math.max(0, Browser.mainLoop.tickStartTime + value - _emscripten_get_now())|0;
-          setTimeout(Browser.mainLoop.runner, timeUntilNextTick); // doing this each time means that on exception, we stop
-        };
-        Browser.mainLoop.method = 'timeout';
-      } else if (mode == 1) {
-        Browser.mainLoop.scheduler = function Browser_mainLoop_scheduler_rAF() {
-          Browser.requestAnimationFrame(Browser.mainLoop.runner);
-        };
-        Browser.mainLoop.method = 'rAF';
-      } else if (mode == 2) {
-        if (typeof setImmediate == 'undefined') {
-          // Emulate setImmediate. (note: not a complete polyfill, we don't emulate clearImmediate() to keep code size to minimum, since not needed)
-          var setImmediates = [];
-          var emscriptenMainLoopMessageId = 'setimmediate';
-          /** @param {Event} event */
-          var Browser_setImmediate_messageHandler = (event) => {
-            // When called in current thread or Worker, the main loop ID is structured slightly different to accommodate for --proxy-to-worker runtime listening to Worker events,
-            // so check for both cases.
-            if (event.data === emscriptenMainLoopMessageId || event.data.target === emscriptenMainLoopMessageId) {
-              event.stopPropagation();
-              setImmediates.shift()();
-            }
-          };
-          addEventListener("message", Browser_setImmediate_messageHandler, true);
-          setImmediate = /** @type{function(function(): ?, ...?): number} */(function Browser_emulated_setImmediate(func) {
-            setImmediates.push(func);
-            if (ENVIRONMENT_IS_WORKER) {
-              if (Module['setImmediates'] === undefined) Module['setImmediates'] = [];
-              Module['setImmediates'].push(func);
-              postMessage({target: emscriptenMainLoopMessageId}); // In --proxy-to-worker, route the message via proxyClient.js
-            } else postMessage(emscriptenMainLoopMessageId, "*"); // On the main thread, can just send the message to itself.
-          });
-        }
-        Browser.mainLoop.scheduler = function Browser_mainLoop_scheduler_setImmediate() {
-          setImmediate(Browser.mainLoop.runner);
-        };
-        Browser.mainLoop.method = 'immediate';
-      }
-      return 0;
-    };
-  
-  
-  
-    /**
-     * @param {number=} arg
-     * @param {boolean=} noSetTiming
-     */
-  var setMainLoop = (browserIterationFunc, fps, simulateInfiniteLoop, arg, noSetTiming) => {
-      assert(!Browser.mainLoop.func, 'emscripten_set_main_loop: there can only be one main loop function at once: call emscripten_cancel_main_loop to cancel the previous one before setting a new one with different parameters.');
-  
-      Browser.mainLoop.func = browserIterationFunc;
-      Browser.mainLoop.arg = arg;
-  
-      var thisMainLoopId = Browser.mainLoop.currentlyRunningMainloop;
-      function checkIsRunning() {
-        if (thisMainLoopId < Browser.mainLoop.currentlyRunningMainloop) {
-          
-          return false;
-        }
-        return true;
-      }
-  
-      // We create the loop runner here but it is not actually running until
-      // _emscripten_set_main_loop_timing is called (which might happen a
-      // later time).  This member signifies that the current runner has not
-      // yet been started so that we can call runtimeKeepalivePush when it
-      // gets it timing set for the first time.
-      Browser.mainLoop.running = false;
-      Browser.mainLoop.runner = function Browser_mainLoop_runner() {
-        if (ABORT) return;
-        if (Browser.mainLoop.queue.length > 0) {
-          var start = Date.now();
-          var blocker = Browser.mainLoop.queue.shift();
-          blocker.func(blocker.arg);
-          if (Browser.mainLoop.remainingBlockers) {
-            var remaining = Browser.mainLoop.remainingBlockers;
-            var next = remaining%1 == 0 ? remaining-1 : Math.floor(remaining);
-            if (blocker.counted) {
-              Browser.mainLoop.remainingBlockers = next;
-            } else {
-              // not counted, but move the progress along a tiny bit
-              next = next + 0.5; // do not steal all the next one's progress
-              Browser.mainLoop.remainingBlockers = (8*remaining + next)/9;
-            }
-          }
-          Browser.mainLoop.updateStatus();
-  
-          // catches pause/resume main loop from blocker execution
-          if (!checkIsRunning()) return;
-  
-          setTimeout(Browser.mainLoop.runner, 0);
-          return;
-        }
-  
-        // catch pauses from non-main loop sources
-        if (!checkIsRunning()) return;
-  
-        // Implement very basic swap interval control
-        Browser.mainLoop.currentFrameNumber = Browser.mainLoop.currentFrameNumber + 1 | 0;
-        if (Browser.mainLoop.timingMode == 1 && Browser.mainLoop.timingValue > 1 && Browser.mainLoop.currentFrameNumber % Browser.mainLoop.timingValue != 0) {
-          // Not the scheduled time to render this frame - skip.
-          Browser.mainLoop.scheduler();
-          return;
-        } else if (Browser.mainLoop.timingMode == 0) {
-          Browser.mainLoop.tickStartTime = _emscripten_get_now();
-        }
-  
-        // Signal GL rendering layer that processing of a new frame is about to start. This helps it optimize
-        // VBO double-buffering and reduce GPU stalls.
-  
-        if (Browser.mainLoop.method === 'timeout' && Module.ctx) {
-          warnOnce('Looks like you are rendering without using requestAnimationFrame for the main loop. You should use 0 for the frame rate in emscripten_set_main_loop in order to use requestAnimationFrame, as that can greatly improve your frame rates!');
-          Browser.mainLoop.method = ''; // just warn once per call to set main loop
-        }
-  
-        Browser.mainLoop.runIter(browserIterationFunc);
-  
-        checkStackCookie();
-  
-        // catch pauses from the main loop itself
-        if (!checkIsRunning()) return;
-  
-        // Queue new audio data. This is important to be right after the main loop invocation, so that we will immediately be able
-        // to queue the newest produced audio samples.
-        // TODO: Consider adding pre- and post- rAF callbacks so that GL.newRenderingFrameStarted() and SDL.audio.queueNewAudioData()
-        //       do not need to be hardcoded into this function, but can be more generic.
-        if (typeof SDL == 'object' && SDL.audio && SDL.audio.queueNewAudioData) SDL.audio.queueNewAudioData();
-  
-        Browser.mainLoop.scheduler();
-      }
-  
-      if (!noSetTiming) {
-        if (fps && fps > 0) {
-          _emscripten_set_main_loop_timing(0, 1000.0 / fps);
-        } else {
-          // Do rAF by rendering each frame (no decimating)
-          _emscripten_set_main_loop_timing(1, 1);
-        }
-  
-        Browser.mainLoop.scheduler();
-      }
-  
-      if (simulateInfiniteLoop) {
-        throw 'unwind';
-      }
-    };
   
   var handleException = (e) => {
       // Certain exception types we do not treat as errors since they are used for
@@ -7549,10 +7435,274 @@ function GetCanvasHeight() { return canvas.clientHeight; }
         }
       },
   };
+  var _emscripten_set_main_loop_timing = (mode, value) => {
+      Browser.mainLoop.timingMode = mode;
+      Browser.mainLoop.timingValue = value;
   
-  var _emscripten_set_window_title = (title) => {
-      setWindowTitle(UTF8ToString(title));
+      if (!Browser.mainLoop.func) {
+        err('emscripten_set_main_loop_timing: Cannot set timing mode for main loop since a main loop does not exist! Call emscripten_set_main_loop first to set one up.');
+        return 1; // Return non-zero on failure, can't set timing mode when there is no main loop.
+      }
+  
+      if (!Browser.mainLoop.running) {
+        
+        Browser.mainLoop.running = true;
+      }
+      if (mode == 0) {
+        Browser.mainLoop.scheduler = function Browser_mainLoop_scheduler_setTimeout() {
+          var timeUntilNextTick = Math.max(0, Browser.mainLoop.tickStartTime + value - _emscripten_get_now())|0;
+          setTimeout(Browser.mainLoop.runner, timeUntilNextTick); // doing this each time means that on exception, we stop
+        };
+        Browser.mainLoop.method = 'timeout';
+      } else if (mode == 1) {
+        Browser.mainLoop.scheduler = function Browser_mainLoop_scheduler_rAF() {
+          Browser.requestAnimationFrame(Browser.mainLoop.runner);
+        };
+        Browser.mainLoop.method = 'rAF';
+      } else if (mode == 2) {
+        if (typeof setImmediate == 'undefined') {
+          // Emulate setImmediate. (note: not a complete polyfill, we don't emulate clearImmediate() to keep code size to minimum, since not needed)
+          var setImmediates = [];
+          var emscriptenMainLoopMessageId = 'setimmediate';
+          /** @param {Event} event */
+          var Browser_setImmediate_messageHandler = (event) => {
+            // When called in current thread or Worker, the main loop ID is structured slightly different to accommodate for --proxy-to-worker runtime listening to Worker events,
+            // so check for both cases.
+            if (event.data === emscriptenMainLoopMessageId || event.data.target === emscriptenMainLoopMessageId) {
+              event.stopPropagation();
+              setImmediates.shift()();
+            }
+          };
+          addEventListener("message", Browser_setImmediate_messageHandler, true);
+          setImmediate = /** @type{function(function(): ?, ...?): number} */(function Browser_emulated_setImmediate(func) {
+            setImmediates.push(func);
+            if (ENVIRONMENT_IS_WORKER) {
+              if (Module['setImmediates'] === undefined) Module['setImmediates'] = [];
+              Module['setImmediates'].push(func);
+              postMessage({target: emscriptenMainLoopMessageId}); // In --proxy-to-worker, route the message via proxyClient.js
+            } else postMessage(emscriptenMainLoopMessageId, "*"); // On the main thread, can just send the message to itself.
+          });
+        }
+        Browser.mainLoop.scheduler = function Browser_mainLoop_scheduler_setImmediate() {
+          setImmediate(Browser.mainLoop.runner);
+        };
+        Browser.mainLoop.method = 'immediate';
+      }
+      return 0;
     };
+  
+  
+  
+    /**
+     * @param {number=} arg
+     * @param {boolean=} noSetTiming
+     */
+  var setMainLoop = (browserIterationFunc, fps, simulateInfiniteLoop, arg, noSetTiming) => {
+      assert(!Browser.mainLoop.func, 'emscripten_set_main_loop: there can only be one main loop function at once: call emscripten_cancel_main_loop to cancel the previous one before setting a new one with different parameters.');
+  
+      Browser.mainLoop.func = browserIterationFunc;
+      Browser.mainLoop.arg = arg;
+  
+      // Closure compiler bug(?): Closure does not see that the assignment
+      //   var thisMainLoopId = Browser.mainLoop.currentlyRunningMainloop
+      // is a value copy of a number (even with the JSDoc @type annotation)
+      // but optimizeis the code as if the assignment was a reference assignment,
+      // which results in Browser.mainLoop.pause() not working. Hence use a
+      // workaround to make Closure believe this is a value copy that should occur:
+      // (TODO: Minimize this down to a small test case and report - was unable
+      // to reproduce in a small written test case)
+      /** @type{number} */
+      var thisMainLoopId = (() => Browser.mainLoop.currentlyRunningMainloop)();
+      function checkIsRunning() {
+        if (thisMainLoopId < Browser.mainLoop.currentlyRunningMainloop) {
+          
+          return false;
+        }
+        return true;
+      }
+  
+      // We create the loop runner here but it is not actually running until
+      // _emscripten_set_main_loop_timing is called (which might happen a
+      // later time).  This member signifies that the current runner has not
+      // yet been started so that we can call runtimeKeepalivePush when it
+      // gets it timing set for the first time.
+      Browser.mainLoop.running = false;
+      Browser.mainLoop.runner = function Browser_mainLoop_runner() {
+        if (ABORT) return;
+        if (Browser.mainLoop.queue.length > 0) {
+          var start = Date.now();
+          var blocker = Browser.mainLoop.queue.shift();
+          blocker.func(blocker.arg);
+          if (Browser.mainLoop.remainingBlockers) {
+            var remaining = Browser.mainLoop.remainingBlockers;
+            var next = remaining%1 == 0 ? remaining-1 : Math.floor(remaining);
+            if (blocker.counted) {
+              Browser.mainLoop.remainingBlockers = next;
+            } else {
+              // not counted, but move the progress along a tiny bit
+              next = next + 0.5; // do not steal all the next one's progress
+              Browser.mainLoop.remainingBlockers = (8*remaining + next)/9;
+            }
+          }
+          Browser.mainLoop.updateStatus();
+  
+          // catches pause/resume main loop from blocker execution
+          if (!checkIsRunning()) return;
+  
+          setTimeout(Browser.mainLoop.runner, 0);
+          return;
+        }
+  
+        // catch pauses from non-main loop sources
+        if (!checkIsRunning()) return;
+  
+        // Implement very basic swap interval control
+        Browser.mainLoop.currentFrameNumber = Browser.mainLoop.currentFrameNumber + 1 | 0;
+        if (Browser.mainLoop.timingMode == 1 && Browser.mainLoop.timingValue > 1 && Browser.mainLoop.currentFrameNumber % Browser.mainLoop.timingValue != 0) {
+          // Not the scheduled time to render this frame - skip.
+          Browser.mainLoop.scheduler();
+          return;
+        } else if (Browser.mainLoop.timingMode == 0) {
+          Browser.mainLoop.tickStartTime = _emscripten_get_now();
+        }
+  
+        // Signal GL rendering layer that processing of a new frame is about to start. This helps it optimize
+        // VBO double-buffering and reduce GPU stalls.
+  
+        if (Browser.mainLoop.method === 'timeout' && Module.ctx) {
+          warnOnce('Looks like you are rendering without using requestAnimationFrame for the main loop. You should use 0 for the frame rate in emscripten_set_main_loop in order to use requestAnimationFrame, as that can greatly improve your frame rates!');
+          Browser.mainLoop.method = ''; // just warn once per call to set main loop
+        }
+  
+        Browser.mainLoop.runIter(browserIterationFunc);
+  
+        checkStackCookie();
+  
+        // catch pauses from the main loop itself
+        if (!checkIsRunning()) return;
+  
+        // Queue new audio data. This is important to be right after the main loop invocation, so that we will immediately be able
+        // to queue the newest produced audio samples.
+        // TODO: Consider adding pre- and post- rAF callbacks so that GL.newRenderingFrameStarted() and SDL.audio.queueNewAudioData()
+        //       do not need to be hardcoded into this function, but can be more generic.
+        if (typeof SDL == 'object' && SDL.audio && SDL.audio.queueNewAudioData) SDL.audio.queueNewAudioData();
+  
+        Browser.mainLoop.scheduler();
+      }
+  
+      if (!noSetTiming) {
+        if (fps && fps > 0) {
+          _emscripten_set_main_loop_timing(0, 1000.0 / fps);
+        } else {
+          // Do rAF by rendering each frame (no decimating)
+          _emscripten_set_main_loop_timing(1, 1);
+        }
+  
+        Browser.mainLoop.scheduler();
+      }
+  
+      if (simulateInfiniteLoop) {
+        throw 'unwind';
+      }
+    };
+  
+  var _emscripten_set_main_loop = (func, fps, simulateInfiniteLoop) => {
+      var browserIterationFunc = (() => dynCall_v.call(null, func));
+      setMainLoop(browserIterationFunc, fps, simulateInfiniteLoop);
+    };
+
+  
+  
+  
+  var registerTouchEventCallback = (target, userData, useCapture, callbackfunc, eventTypeId, eventTypeString, targetThread) => {
+      if (!JSEvents.touchEvent) JSEvents.touchEvent = _malloc(1696);
+  
+      target = findEventTarget(target);
+  
+      var touchEventHandlerFunc = (e) => {
+        assert(e);
+        var t, touches = {}, et = e.touches;
+        // To ease marshalling different kinds of touches that browser reports (all touches are listed in e.touches,
+        // only changed touches in e.changedTouches, and touches on target at a.targetTouches), mark a boolean in
+        // each Touch object so that we can later loop only once over all touches we see to marshall over to Wasm.
+  
+        for (var i = 0; i < et.length; ++i) {
+          t = et[i];
+          // Browser might recycle the generated Touch objects between each frame (Firefox on Android), so reset any
+          // changed/target states we may have set from previous frame.
+          t.isChanged = t.onTarget = 0;
+          touches[t.identifier] = t;
+        }
+        // Mark which touches are part of the changedTouches list.
+        for (var i = 0; i < e.changedTouches.length; ++i) {
+          t = e.changedTouches[i];
+          t.isChanged = 1;
+          touches[t.identifier] = t;
+        }
+        // Mark which touches are part of the targetTouches list.
+        for (var i = 0; i < e.targetTouches.length; ++i) {
+          touches[e.targetTouches[i].identifier].onTarget = 1;
+        }
+  
+        var touchEvent = JSEvents.touchEvent;
+        HEAPF64[((touchEvent)>>3)] = e.timeStamp;
+        var idx = touchEvent>>2; // Pre-shift the ptr to index to HEAP32 to save code size
+        HEAP32[idx + 3] = e.ctrlKey;
+        HEAP32[idx + 4] = e.shiftKey;
+        HEAP32[idx + 5] = e.altKey;
+        HEAP32[idx + 6] = e.metaKey;
+        idx += 7; // Advance to the start of the touch array.
+        var targetRect = getBoundingClientRect(target);
+        var numTouches = 0;
+        for (var i in touches) {
+          t = touches[i];
+          HEAP32[idx + 0] = t.identifier;
+          HEAP32[idx + 1] = t.screenX;
+          HEAP32[idx + 2] = t.screenY;
+          HEAP32[idx + 3] = t.clientX;
+          HEAP32[idx + 4] = t.clientY;
+          HEAP32[idx + 5] = t.pageX;
+          HEAP32[idx + 6] = t.pageY;
+          HEAP32[idx + 7] = t.isChanged;
+          HEAP32[idx + 8] = t.onTarget;
+          HEAP32[idx + 9] = t.clientX - targetRect.left;
+          HEAP32[idx + 10] = t.clientY - targetRect.top;
+  
+          idx += 13;
+  
+          if (++numTouches > 31) {
+            break;
+          }
+        }
+        HEAP32[(((touchEvent)+(8))>>2)] = numTouches;
+  
+        if (((a1, a2, a3) => dynCall_iiii.apply(null, [callbackfunc, a1, a2, a3]))(eventTypeId, touchEvent, userData)) e.preventDefault();
+      };
+  
+      var eventHandler = {
+        target,
+        allowsDeferredCalls: eventTypeString == 'touchstart' || eventTypeString == 'touchend',
+        eventTypeString,
+        callbackfunc,
+        handlerFunc: touchEventHandlerFunc,
+        useCapture
+      };
+      return JSEvents.registerOrRemoveHandler(eventHandler);
+    };
+  var _emscripten_set_touchcancel_callback_on_thread = (target, userData, useCapture, callbackfunc, targetThread) =>
+      registerTouchEventCallback(target, userData, useCapture, callbackfunc, 25, "touchcancel", targetThread);
+
+  var _emscripten_set_touchend_callback_on_thread = (target, userData, useCapture, callbackfunc, targetThread) =>
+      registerTouchEventCallback(target, userData, useCapture, callbackfunc, 23, "touchend", targetThread);
+
+  var _emscripten_set_touchmove_callback_on_thread = (target, userData, useCapture, callbackfunc, targetThread) =>
+      registerTouchEventCallback(target, userData, useCapture, callbackfunc, 24, "touchmove", targetThread);
+
+  var _emscripten_set_touchstart_callback_on_thread = (target, userData, useCapture, callbackfunc, targetThread) =>
+      registerTouchEventCallback(target, userData, useCapture, callbackfunc, 22, "touchstart", targetThread);
+
+  
+  var _emscripten_set_window_title = (title) => document.title = UTF8ToString(title);
 
   var _emscripten_sleep = (ms) => {
       // emscripten_sleep() does not return a value, but we still need a |return|
@@ -8166,9 +8316,9 @@ function GetCanvasHeight() { return canvas.clientHeight; }
         var win = GLFW.WindowFromId(winid);
         if (!win) return;
   
-        win.title = UTF8ToString(title);
+        win.title = title;
         if (GLFW.active.id == win.id) {
-          document.title = win.title;
+          _emscripten_set_window_title(title);
         }
       },
   setJoystickCallback:(cbfun) => {
@@ -8750,6 +8900,14 @@ function GetCanvasHeight() { return canvas.clientHeight; }
 
 
 
+  
+  var stringToUTF8OnStack = (str) => {
+      var size = lengthBytesUTF8(str) + 1;
+      var ret = stackAlloc(size);
+      stringToUTF8(str, ret, size);
+      return ret;
+    };
+
 
   var runAndAbortIfError = (func) => {
       try {
@@ -8792,15 +8950,14 @@ function GetCanvasHeight() { return canvas.clientHeight; }
   
   var Asyncify = {
   instrumentWasmImports(imports) {
-        var importPatterns = [/^invoke_.*$/,/^fd_sync$/,/^__wasi_fd_sync$/,/^__asyncjs__.*$/,/^emscripten_promise_await$/,/^emscripten_idb_load$/,/^emscripten_idb_store$/,/^emscripten_idb_delete$/,/^emscripten_idb_exists$/,/^emscripten_idb_load_blob$/,/^emscripten_idb_store_blob$/,/^emscripten_sleep$/,/^emscripten_wget_data$/,/^emscripten_scan_registers$/,/^emscripten_lazy_load_code$/,/^_load_secondary_module$/,/^emscripten_fiber_swap$/,/^SDL_Delay$/];
+        var importPattern = /^(invoke_.*|__asyncjs__.*)$/;
   
         for (var x in imports) {
           (function(x) {
             var original = imports[x];
             var sig = original.sig;
             if (typeof original == 'function') {
-              var isAsyncifyImport = original.isAsync ||
-                                     importPatterns.some(pattern => !!x.match(pattern));
+              var isAsyncifyImport = original.isAsync || importPattern.test(x);
               imports[x] = function() {
                 var originalAsyncifyState = Asyncify.state;
                 try {
@@ -9042,6 +9199,9 @@ function GetCanvasHeight() { return canvas.clientHeight; }
   };
 
 
+
+  var FS_unlink = (path) => FS.unlink(path);
+
   var FSNode = /** @constructor */ function(parent, name, mode, rdev) {
     if (!parent) {
       parent = this;  // root node sets parent to itself
@@ -9240,281 +9400,553 @@ function checkIncomingModuleAPI() {
   ignoredModuleProp('fetchSettings');
 }
 var wasmImports = {
+  /** @export */
   __assert_fail: ___assert_fail,
+  /** @export */
+  __cxa_throw: ___cxa_throw,
+  /** @export */
   __syscall_fcntl64: ___syscall_fcntl64,
+  /** @export */
   __syscall_getcwd: ___syscall_getcwd,
+  /** @export */
   __syscall_ioctl: ___syscall_ioctl,
+  /** @export */
   __syscall_openat: ___syscall_openat,
+  /** @export */
   _emscripten_get_now_is_monotonic: __emscripten_get_now_is_monotonic,
+  /** @export */
+  abort: _abort,
+  /** @export */
   emscripten_date_now: _emscripten_date_now,
+  /** @export */
   emscripten_get_element_css_size: _emscripten_get_element_css_size,
+  /** @export */
   emscripten_get_gamepad_status: _emscripten_get_gamepad_status,
+  /** @export */
   emscripten_get_now: _emscripten_get_now,
+  /** @export */
   emscripten_get_num_gamepads: _emscripten_get_num_gamepads,
+  /** @export */
   emscripten_glActiveTexture: _emscripten_glActiveTexture,
+  /** @export */
   emscripten_glAttachShader: _emscripten_glAttachShader,
+  /** @export */
   emscripten_glBeginQueryEXT: _emscripten_glBeginQueryEXT,
+  /** @export */
   emscripten_glBindAttribLocation: _emscripten_glBindAttribLocation,
+  /** @export */
   emscripten_glBindBuffer: _emscripten_glBindBuffer,
+  /** @export */
   emscripten_glBindFramebuffer: _emscripten_glBindFramebuffer,
+  /** @export */
   emscripten_glBindRenderbuffer: _emscripten_glBindRenderbuffer,
+  /** @export */
   emscripten_glBindTexture: _emscripten_glBindTexture,
+  /** @export */
   emscripten_glBindVertexArrayOES: _emscripten_glBindVertexArrayOES,
+  /** @export */
   emscripten_glBlendColor: _emscripten_glBlendColor,
+  /** @export */
   emscripten_glBlendEquation: _emscripten_glBlendEquation,
+  /** @export */
   emscripten_glBlendEquationSeparate: _emscripten_glBlendEquationSeparate,
+  /** @export */
   emscripten_glBlendFunc: _emscripten_glBlendFunc,
+  /** @export */
   emscripten_glBlendFuncSeparate: _emscripten_glBlendFuncSeparate,
+  /** @export */
   emscripten_glBufferData: _emscripten_glBufferData,
+  /** @export */
   emscripten_glBufferSubData: _emscripten_glBufferSubData,
+  /** @export */
   emscripten_glCheckFramebufferStatus: _emscripten_glCheckFramebufferStatus,
+  /** @export */
   emscripten_glClear: _emscripten_glClear,
+  /** @export */
   emscripten_glClearColor: _emscripten_glClearColor,
+  /** @export */
   emscripten_glClearDepthf: _emscripten_glClearDepthf,
+  /** @export */
   emscripten_glClearStencil: _emscripten_glClearStencil,
+  /** @export */
   emscripten_glColorMask: _emscripten_glColorMask,
+  /** @export */
   emscripten_glCompileShader: _emscripten_glCompileShader,
+  /** @export */
   emscripten_glCompressedTexImage2D: _emscripten_glCompressedTexImage2D,
+  /** @export */
   emscripten_glCompressedTexSubImage2D: _emscripten_glCompressedTexSubImage2D,
+  /** @export */
   emscripten_glCopyTexImage2D: _emscripten_glCopyTexImage2D,
+  /** @export */
   emscripten_glCopyTexSubImage2D: _emscripten_glCopyTexSubImage2D,
+  /** @export */
   emscripten_glCreateProgram: _emscripten_glCreateProgram,
+  /** @export */
   emscripten_glCreateShader: _emscripten_glCreateShader,
+  /** @export */
   emscripten_glCullFace: _emscripten_glCullFace,
+  /** @export */
   emscripten_glDeleteBuffers: _emscripten_glDeleteBuffers,
+  /** @export */
   emscripten_glDeleteFramebuffers: _emscripten_glDeleteFramebuffers,
+  /** @export */
   emscripten_glDeleteProgram: _emscripten_glDeleteProgram,
+  /** @export */
   emscripten_glDeleteQueriesEXT: _emscripten_glDeleteQueriesEXT,
+  /** @export */
   emscripten_glDeleteRenderbuffers: _emscripten_glDeleteRenderbuffers,
+  /** @export */
   emscripten_glDeleteShader: _emscripten_glDeleteShader,
+  /** @export */
   emscripten_glDeleteTextures: _emscripten_glDeleteTextures,
+  /** @export */
   emscripten_glDeleteVertexArraysOES: _emscripten_glDeleteVertexArraysOES,
+  /** @export */
   emscripten_glDepthFunc: _emscripten_glDepthFunc,
+  /** @export */
   emscripten_glDepthMask: _emscripten_glDepthMask,
+  /** @export */
   emscripten_glDepthRangef: _emscripten_glDepthRangef,
+  /** @export */
   emscripten_glDetachShader: _emscripten_glDetachShader,
+  /** @export */
   emscripten_glDisable: _emscripten_glDisable,
+  /** @export */
   emscripten_glDisableVertexAttribArray: _emscripten_glDisableVertexAttribArray,
+  /** @export */
   emscripten_glDrawArrays: _emscripten_glDrawArrays,
+  /** @export */
   emscripten_glDrawArraysInstancedANGLE: _emscripten_glDrawArraysInstancedANGLE,
+  /** @export */
   emscripten_glDrawBuffersWEBGL: _emscripten_glDrawBuffersWEBGL,
+  /** @export */
   emscripten_glDrawElements: _emscripten_glDrawElements,
+  /** @export */
   emscripten_glDrawElementsInstancedANGLE: _emscripten_glDrawElementsInstancedANGLE,
+  /** @export */
   emscripten_glEnable: _emscripten_glEnable,
+  /** @export */
   emscripten_glEnableVertexAttribArray: _emscripten_glEnableVertexAttribArray,
+  /** @export */
   emscripten_glEndQueryEXT: _emscripten_glEndQueryEXT,
+  /** @export */
   emscripten_glFinish: _emscripten_glFinish,
+  /** @export */
   emscripten_glFlush: _emscripten_glFlush,
+  /** @export */
   emscripten_glFramebufferRenderbuffer: _emscripten_glFramebufferRenderbuffer,
+  /** @export */
   emscripten_glFramebufferTexture2D: _emscripten_glFramebufferTexture2D,
+  /** @export */
   emscripten_glFrontFace: _emscripten_glFrontFace,
+  /** @export */
   emscripten_glGenBuffers: _emscripten_glGenBuffers,
+  /** @export */
   emscripten_glGenFramebuffers: _emscripten_glGenFramebuffers,
+  /** @export */
   emscripten_glGenQueriesEXT: _emscripten_glGenQueriesEXT,
+  /** @export */
   emscripten_glGenRenderbuffers: _emscripten_glGenRenderbuffers,
+  /** @export */
   emscripten_glGenTextures: _emscripten_glGenTextures,
+  /** @export */
   emscripten_glGenVertexArraysOES: _emscripten_glGenVertexArraysOES,
+  /** @export */
   emscripten_glGenerateMipmap: _emscripten_glGenerateMipmap,
+  /** @export */
   emscripten_glGetActiveAttrib: _emscripten_glGetActiveAttrib,
+  /** @export */
   emscripten_glGetActiveUniform: _emscripten_glGetActiveUniform,
+  /** @export */
   emscripten_glGetAttachedShaders: _emscripten_glGetAttachedShaders,
+  /** @export */
   emscripten_glGetAttribLocation: _emscripten_glGetAttribLocation,
+  /** @export */
   emscripten_glGetBooleanv: _emscripten_glGetBooleanv,
+  /** @export */
   emscripten_glGetBufferParameteriv: _emscripten_glGetBufferParameteriv,
+  /** @export */
   emscripten_glGetError: _emscripten_glGetError,
+  /** @export */
   emscripten_glGetFloatv: _emscripten_glGetFloatv,
+  /** @export */
   emscripten_glGetFramebufferAttachmentParameteriv: _emscripten_glGetFramebufferAttachmentParameteriv,
+  /** @export */
   emscripten_glGetIntegerv: _emscripten_glGetIntegerv,
+  /** @export */
   emscripten_glGetProgramInfoLog: _emscripten_glGetProgramInfoLog,
+  /** @export */
   emscripten_glGetProgramiv: _emscripten_glGetProgramiv,
+  /** @export */
   emscripten_glGetQueryObjecti64vEXT: _emscripten_glGetQueryObjecti64vEXT,
+  /** @export */
   emscripten_glGetQueryObjectivEXT: _emscripten_glGetQueryObjectivEXT,
+  /** @export */
   emscripten_glGetQueryObjectui64vEXT: _emscripten_glGetQueryObjectui64vEXT,
+  /** @export */
   emscripten_glGetQueryObjectuivEXT: _emscripten_glGetQueryObjectuivEXT,
+  /** @export */
   emscripten_glGetQueryivEXT: _emscripten_glGetQueryivEXT,
+  /** @export */
   emscripten_glGetRenderbufferParameteriv: _emscripten_glGetRenderbufferParameteriv,
+  /** @export */
   emscripten_glGetShaderInfoLog: _emscripten_glGetShaderInfoLog,
+  /** @export */
   emscripten_glGetShaderPrecisionFormat: _emscripten_glGetShaderPrecisionFormat,
+  /** @export */
   emscripten_glGetShaderSource: _emscripten_glGetShaderSource,
+  /** @export */
   emscripten_glGetShaderiv: _emscripten_glGetShaderiv,
+  /** @export */
   emscripten_glGetString: _emscripten_glGetString,
+  /** @export */
   emscripten_glGetTexParameterfv: _emscripten_glGetTexParameterfv,
+  /** @export */
   emscripten_glGetTexParameteriv: _emscripten_glGetTexParameteriv,
+  /** @export */
   emscripten_glGetUniformLocation: _emscripten_glGetUniformLocation,
+  /** @export */
   emscripten_glGetUniformfv: _emscripten_glGetUniformfv,
+  /** @export */
   emscripten_glGetUniformiv: _emscripten_glGetUniformiv,
+  /** @export */
   emscripten_glGetVertexAttribPointerv: _emscripten_glGetVertexAttribPointerv,
+  /** @export */
   emscripten_glGetVertexAttribfv: _emscripten_glGetVertexAttribfv,
+  /** @export */
   emscripten_glGetVertexAttribiv: _emscripten_glGetVertexAttribiv,
+  /** @export */
   emscripten_glHint: _emscripten_glHint,
+  /** @export */
   emscripten_glIsBuffer: _emscripten_glIsBuffer,
+  /** @export */
   emscripten_glIsEnabled: _emscripten_glIsEnabled,
+  /** @export */
   emscripten_glIsFramebuffer: _emscripten_glIsFramebuffer,
+  /** @export */
   emscripten_glIsProgram: _emscripten_glIsProgram,
+  /** @export */
   emscripten_glIsQueryEXT: _emscripten_glIsQueryEXT,
+  /** @export */
   emscripten_glIsRenderbuffer: _emscripten_glIsRenderbuffer,
+  /** @export */
   emscripten_glIsShader: _emscripten_glIsShader,
+  /** @export */
   emscripten_glIsTexture: _emscripten_glIsTexture,
+  /** @export */
   emscripten_glIsVertexArrayOES: _emscripten_glIsVertexArrayOES,
+  /** @export */
   emscripten_glLineWidth: _emscripten_glLineWidth,
+  /** @export */
   emscripten_glLinkProgram: _emscripten_glLinkProgram,
+  /** @export */
   emscripten_glPixelStorei: _emscripten_glPixelStorei,
+  /** @export */
   emscripten_glPolygonOffset: _emscripten_glPolygonOffset,
+  /** @export */
   emscripten_glQueryCounterEXT: _emscripten_glQueryCounterEXT,
+  /** @export */
   emscripten_glReadPixels: _emscripten_glReadPixels,
+  /** @export */
   emscripten_glReleaseShaderCompiler: _emscripten_glReleaseShaderCompiler,
+  /** @export */
   emscripten_glRenderbufferStorage: _emscripten_glRenderbufferStorage,
+  /** @export */
   emscripten_glSampleCoverage: _emscripten_glSampleCoverage,
+  /** @export */
   emscripten_glScissor: _emscripten_glScissor,
+  /** @export */
   emscripten_glShaderBinary: _emscripten_glShaderBinary,
+  /** @export */
   emscripten_glShaderSource: _emscripten_glShaderSource,
+  /** @export */
   emscripten_glStencilFunc: _emscripten_glStencilFunc,
+  /** @export */
   emscripten_glStencilFuncSeparate: _emscripten_glStencilFuncSeparate,
+  /** @export */
   emscripten_glStencilMask: _emscripten_glStencilMask,
+  /** @export */
   emscripten_glStencilMaskSeparate: _emscripten_glStencilMaskSeparate,
+  /** @export */
   emscripten_glStencilOp: _emscripten_glStencilOp,
+  /** @export */
   emscripten_glStencilOpSeparate: _emscripten_glStencilOpSeparate,
+  /** @export */
   emscripten_glTexImage2D: _emscripten_glTexImage2D,
+  /** @export */
   emscripten_glTexParameterf: _emscripten_glTexParameterf,
+  /** @export */
   emscripten_glTexParameterfv: _emscripten_glTexParameterfv,
+  /** @export */
   emscripten_glTexParameteri: _emscripten_glTexParameteri,
+  /** @export */
   emscripten_glTexParameteriv: _emscripten_glTexParameteriv,
+  /** @export */
   emscripten_glTexSubImage2D: _emscripten_glTexSubImage2D,
+  /** @export */
   emscripten_glUniform1f: _emscripten_glUniform1f,
+  /** @export */
   emscripten_glUniform1fv: _emscripten_glUniform1fv,
+  /** @export */
   emscripten_glUniform1i: _emscripten_glUniform1i,
+  /** @export */
   emscripten_glUniform1iv: _emscripten_glUniform1iv,
+  /** @export */
   emscripten_glUniform2f: _emscripten_glUniform2f,
+  /** @export */
   emscripten_glUniform2fv: _emscripten_glUniform2fv,
+  /** @export */
   emscripten_glUniform2i: _emscripten_glUniform2i,
+  /** @export */
   emscripten_glUniform2iv: _emscripten_glUniform2iv,
+  /** @export */
   emscripten_glUniform3f: _emscripten_glUniform3f,
+  /** @export */
   emscripten_glUniform3fv: _emscripten_glUniform3fv,
+  /** @export */
   emscripten_glUniform3i: _emscripten_glUniform3i,
+  /** @export */
   emscripten_glUniform3iv: _emscripten_glUniform3iv,
+  /** @export */
   emscripten_glUniform4f: _emscripten_glUniform4f,
+  /** @export */
   emscripten_glUniform4fv: _emscripten_glUniform4fv,
+  /** @export */
   emscripten_glUniform4i: _emscripten_glUniform4i,
+  /** @export */
   emscripten_glUniform4iv: _emscripten_glUniform4iv,
+  /** @export */
   emscripten_glUniformMatrix2fv: _emscripten_glUniformMatrix2fv,
+  /** @export */
   emscripten_glUniformMatrix3fv: _emscripten_glUniformMatrix3fv,
+  /** @export */
   emscripten_glUniformMatrix4fv: _emscripten_glUniformMatrix4fv,
+  /** @export */
   emscripten_glUseProgram: _emscripten_glUseProgram,
+  /** @export */
   emscripten_glValidateProgram: _emscripten_glValidateProgram,
+  /** @export */
   emscripten_glVertexAttrib1f: _emscripten_glVertexAttrib1f,
+  /** @export */
   emscripten_glVertexAttrib1fv: _emscripten_glVertexAttrib1fv,
+  /** @export */
   emscripten_glVertexAttrib2f: _emscripten_glVertexAttrib2f,
+  /** @export */
   emscripten_glVertexAttrib2fv: _emscripten_glVertexAttrib2fv,
+  /** @export */
   emscripten_glVertexAttrib3f: _emscripten_glVertexAttrib3f,
+  /** @export */
   emscripten_glVertexAttrib3fv: _emscripten_glVertexAttrib3fv,
+  /** @export */
   emscripten_glVertexAttrib4f: _emscripten_glVertexAttrib4f,
+  /** @export */
   emscripten_glVertexAttrib4fv: _emscripten_glVertexAttrib4fv,
+  /** @export */
   emscripten_glVertexAttribDivisorANGLE: _emscripten_glVertexAttribDivisorANGLE,
+  /** @export */
   emscripten_glVertexAttribPointer: _emscripten_glVertexAttribPointer,
+  /** @export */
   emscripten_glViewport: _emscripten_glViewport,
-  emscripten_memcpy_big: _emscripten_memcpy_big,
+  /** @export */
+  emscripten_memcpy_js: _emscripten_memcpy_js,
+  /** @export */
   emscripten_resize_heap: _emscripten_resize_heap,
+  /** @export */
   emscripten_run_script: _emscripten_run_script,
+  /** @export */
   emscripten_sample_gamepad_data: _emscripten_sample_gamepad_data,
+  /** @export */
   emscripten_set_click_callback_on_thread: _emscripten_set_click_callback_on_thread,
+  /** @export */
   emscripten_set_fullscreenchange_callback_on_thread: _emscripten_set_fullscreenchange_callback_on_thread,
+  /** @export */
   emscripten_set_gamepadconnected_callback_on_thread: _emscripten_set_gamepadconnected_callback_on_thread,
+  /** @export */
   emscripten_set_gamepaddisconnected_callback_on_thread: _emscripten_set_gamepaddisconnected_callback_on_thread,
+  /** @export */
+  emscripten_set_main_loop: _emscripten_set_main_loop,
+  /** @export */
   emscripten_set_touchcancel_callback_on_thread: _emscripten_set_touchcancel_callback_on_thread,
+  /** @export */
   emscripten_set_touchend_callback_on_thread: _emscripten_set_touchend_callback_on_thread,
+  /** @export */
   emscripten_set_touchmove_callback_on_thread: _emscripten_set_touchmove_callback_on_thread,
+  /** @export */
   emscripten_set_touchstart_callback_on_thread: _emscripten_set_touchstart_callback_on_thread,
+  /** @export */
   emscripten_set_window_title: _emscripten_set_window_title,
+  /** @export */
   emscripten_sleep: _emscripten_sleep,
+  /** @export */
   exit: _exit,
+  /** @export */
   fd_close: _fd_close,
+  /** @export */
   fd_read: _fd_read,
+  /** @export */
   fd_seek: _fd_seek,
+  /** @export */
   fd_write: _fd_write,
+  /** @export */
   glActiveTexture: _glActiveTexture,
+  /** @export */
   glAttachShader: _glAttachShader,
+  /** @export */
   glBindAttribLocation: _glBindAttribLocation,
+  /** @export */
   glBindBuffer: _glBindBuffer,
+  /** @export */
   glBindTexture: _glBindTexture,
+  /** @export */
   glBlendFunc: _glBlendFunc,
+  /** @export */
   glBufferData: _glBufferData,
+  /** @export */
   glBufferSubData: _glBufferSubData,
+  /** @export */
   glClear: _glClear,
+  /** @export */
   glClearColor: _glClearColor,
+  /** @export */
   glClearDepthf: _glClearDepthf,
+  /** @export */
   glCompileShader: _glCompileShader,
+  /** @export */
   glCompressedTexImage2D: _glCompressedTexImage2D,
+  /** @export */
   glCreateProgram: _glCreateProgram,
+  /** @export */
   glCreateShader: _glCreateShader,
+  /** @export */
   glCullFace: _glCullFace,
+  /** @export */
   glDeleteBuffers: _glDeleteBuffers,
+  /** @export */
   glDeleteProgram: _glDeleteProgram,
+  /** @export */
   glDeleteShader: _glDeleteShader,
+  /** @export */
   glDeleteTextures: _glDeleteTextures,
+  /** @export */
   glDepthFunc: _glDepthFunc,
+  /** @export */
   glDetachShader: _glDetachShader,
+  /** @export */
   glDisable: _glDisable,
+  /** @export */
   glDisableVertexAttribArray: _glDisableVertexAttribArray,
+  /** @export */
   glDrawArrays: _glDrawArrays,
+  /** @export */
   glDrawElements: _glDrawElements,
+  /** @export */
   glEnable: _glEnable,
+  /** @export */
   glEnableVertexAttribArray: _glEnableVertexAttribArray,
+  /** @export */
   glFrontFace: _glFrontFace,
+  /** @export */
   glGenBuffers: _glGenBuffers,
+  /** @export */
   glGenTextures: _glGenTextures,
+  /** @export */
   glGetAttribLocation: _glGetAttribLocation,
+  /** @export */
   glGetFloatv: _glGetFloatv,
+  /** @export */
   glGetProgramInfoLog: _glGetProgramInfoLog,
+  /** @export */
   glGetProgramiv: _glGetProgramiv,
+  /** @export */
   glGetShaderInfoLog: _glGetShaderInfoLog,
+  /** @export */
   glGetShaderiv: _glGetShaderiv,
+  /** @export */
   glGetString: _glGetString,
+  /** @export */
   glGetUniformLocation: _glGetUniformLocation,
+  /** @export */
   glLinkProgram: _glLinkProgram,
+  /** @export */
   glPixelStorei: _glPixelStorei,
+  /** @export */
   glReadPixels: _glReadPixels,
+  /** @export */
   glShaderSource: _glShaderSource,
+  /** @export */
   glTexImage2D: _glTexImage2D,
+  /** @export */
   glTexParameterf: _glTexParameterf,
+  /** @export */
   glTexParameteri: _glTexParameteri,
+  /** @export */
   glUniform1i: _glUniform1i,
+  /** @export */
   glUniform4f: _glUniform4f,
+  /** @export */
   glUniformMatrix4fv: _glUniformMatrix4fv,
+  /** @export */
   glUseProgram: _glUseProgram,
+  /** @export */
   glVertexAttribPointer: _glVertexAttribPointer,
+  /** @export */
   glViewport: _glViewport,
+  /** @export */
   glfwCreateWindow: _glfwCreateWindow,
+  /** @export */
   glfwDefaultWindowHints: _glfwDefaultWindowHints,
+  /** @export */
   glfwDestroyWindow: _glfwDestroyWindow,
+  /** @export */
   glfwGetPrimaryMonitor: _glfwGetPrimaryMonitor,
+  /** @export */
   glfwGetTime: _glfwGetTime,
+  /** @export */
   glfwGetVideoModes: _glfwGetVideoModes,
+  /** @export */
   glfwInit: _glfwInit,
+  /** @export */
   glfwMakeContextCurrent: _glfwMakeContextCurrent,
+  /** @export */
   glfwSetCharCallback: _glfwSetCharCallback,
+  /** @export */
   glfwSetCursorEnterCallback: _glfwSetCursorEnterCallback,
+  /** @export */
   glfwSetCursorPosCallback: _glfwSetCursorPosCallback,
+  /** @export */
   glfwSetDropCallback: _glfwSetDropCallback,
+  /** @export */
   glfwSetErrorCallback: _glfwSetErrorCallback,
+  /** @export */
   glfwSetKeyCallback: _glfwSetKeyCallback,
+  /** @export */
   glfwSetMouseButtonCallback: _glfwSetMouseButtonCallback,
+  /** @export */
   glfwSetScrollCallback: _glfwSetScrollCallback,
+  /** @export */
   glfwSetWindowFocusCallback: _glfwSetWindowFocusCallback,
+  /** @export */
   glfwSetWindowIconifyCallback: _glfwSetWindowIconifyCallback,
+  /** @export */
   glfwSetWindowShouldClose: _glfwSetWindowShouldClose,
+  /** @export */
   glfwSetWindowSizeCallback: _glfwSetWindowSizeCallback,
+  /** @export */
   glfwSwapBuffers: _glfwSwapBuffers,
+  /** @export */
   glfwTerminate: _glfwTerminate,
+  /** @export */
   glfwWindowHint: _glfwWindowHint
 };
 Asyncify.instrumentWasmImports(wasmImports);
 var wasmExports = createWasm();
 var ___wasm_call_ctors = createExportWrapper('__wasm_call_ctors');
-var _main = Module['_main'] = createExportWrapper('main');
+var ___errno_location = createExportWrapper('__errno_location');
+var _main = Module['_main'] = createExportWrapper('__main_argc_argv');
 var _malloc = createExportWrapper('malloc');
 var _free = createExportWrapper('free');
 var _fflush = Module['_fflush'] = createExportWrapper('fflush');
-var ___errno_location = createExportWrapper('__errno_location');
 var _emscripten_stack_init = () => (_emscripten_stack_init = wasmExports['emscripten_stack_init'])();
 var _emscripten_stack_get_free = () => (_emscripten_stack_get_free = wasmExports['emscripten_stack_get_free'])();
 var _emscripten_stack_get_base = () => (_emscripten_stack_get_base = wasmExports['emscripten_stack_get_base'])();
@@ -9523,23 +9955,24 @@ var stackSave = createExportWrapper('stackSave');
 var stackRestore = createExportWrapper('stackRestore');
 var stackAlloc = createExportWrapper('stackAlloc');
 var _emscripten_stack_get_current = () => (_emscripten_stack_get_current = wasmExports['emscripten_stack_get_current'])();
-var dynCall_vii = Module['dynCall_vii'] = createExportWrapper('dynCall_vii');
-var dynCall_viii = Module['dynCall_viii'] = createExportWrapper('dynCall_viii');
-var dynCall_viiiii = Module['dynCall_viiiii'] = createExportWrapper('dynCall_viiiii');
-var dynCall_viiii = Module['dynCall_viiii'] = createExportWrapper('dynCall_viiii');
-var dynCall_vidd = Module['dynCall_vidd'] = createExportWrapper('dynCall_vidd');
+var ___cxa_is_pointer_type = createExportWrapper('__cxa_is_pointer_type');
+var dynCall_v = Module['dynCall_v'] = createExportWrapper('dynCall_v');
+var dynCall_vi = Module['dynCall_vi'] = createExportWrapper('dynCall_vi');
 var dynCall_ii = Module['dynCall_ii'] = createExportWrapper('dynCall_ii');
 var dynCall_iiii = Module['dynCall_iiii'] = createExportWrapper('dynCall_iiii');
-var dynCall_vi = Module['dynCall_vi'] = createExportWrapper('dynCall_vi');
+var dynCall_iii = Module['dynCall_iii'] = createExportWrapper('dynCall_iii');
+var dynCall_viii = Module['dynCall_viii'] = createExportWrapper('dynCall_viii');
+var dynCall_viiiii = Module['dynCall_viiiii'] = createExportWrapper('dynCall_viiiii');
+var dynCall_vii = Module['dynCall_vii'] = createExportWrapper('dynCall_vii');
+var dynCall_viiii = Module['dynCall_viiii'] = createExportWrapper('dynCall_viiii');
+var dynCall_vidd = Module['dynCall_vidd'] = createExportWrapper('dynCall_vidd');
 var dynCall_vffff = Module['dynCall_vffff'] = createExportWrapper('dynCall_vffff');
 var dynCall_vf = Module['dynCall_vf'] = createExportWrapper('dynCall_vf');
 var dynCall_viiiiiiii = Module['dynCall_viiiiiiii'] = createExportWrapper('dynCall_viiiiiiii');
 var dynCall_viiiiiiiii = Module['dynCall_viiiiiiiii'] = createExportWrapper('dynCall_viiiiiiiii');
 var dynCall_i = Module['dynCall_i'] = createExportWrapper('dynCall_i');
 var dynCall_vff = Module['dynCall_vff'] = createExportWrapper('dynCall_vff');
-var dynCall_v = Module['dynCall_v'] = createExportWrapper('dynCall_v');
 var dynCall_viiiiiii = Module['dynCall_viiiiiii'] = createExportWrapper('dynCall_viiiiiii');
-var dynCall_iii = Module['dynCall_iii'] = createExportWrapper('dynCall_iii');
 var dynCall_vfi = Module['dynCall_vfi'] = createExportWrapper('dynCall_vfi');
 var dynCall_viif = Module['dynCall_viif'] = createExportWrapper('dynCall_viif');
 var dynCall_vif = Module['dynCall_vif'] = createExportWrapper('dynCall_vif');
@@ -9553,8 +9986,8 @@ var _asyncify_start_unwind = createExportWrapper('asyncify_start_unwind');
 var _asyncify_stop_unwind = createExportWrapper('asyncify_stop_unwind');
 var _asyncify_start_rewind = createExportWrapper('asyncify_start_rewind');
 var _asyncify_stop_rewind = createExportWrapper('asyncify_stop_rewind');
-var ___start_em_js = Module['___start_em_js'] = 83748;
-var ___stop_em_js = Module['___stop_em_js'] = 83823;
+var ___start_em_js = Module['___start_em_js'] = 90852;
+var ___stop_em_js = Module['___stop_em_js'] = 90927;
 
 // include: postamble.js
 // === Auto-generated postamble setup entry stuff ===
@@ -9593,11 +10026,11 @@ function tryParseAsDataURI(filename) {
 Module['addRunDependency'] = addRunDependency;
 Module['removeRunDependency'] = removeRunDependency;
 Module['FS_createPath'] = FS.createPath;
-Module['FS_createDataFile'] = FS.createDataFile;
 Module['FS_createLazyFile'] = FS.createLazyFile;
 Module['FS_createDevice'] = FS.createDevice;
-Module['FS_unlink'] = FS.unlink;
 Module['FS_createPreloadedFile'] = FS.createPreloadedFile;
+Module['FS_createDataFile'] = FS.createDataFile;
+Module['FS_unlink'] = FS.unlink;
 var missingLibrarySymbols = [
   'writeI53ToI64Clamped',
   'writeI53ToI64Signaling',
@@ -9661,7 +10094,6 @@ var missingLibrarySymbols = [
   'UTF32ToString',
   'stringToUTF32',
   'lengthBytesUTF32',
-  'stringToUTF8OnStack',
   'writeArrayToMemory',
   'registerKeyEventCallback',
   'findCanvasEventTarget',
@@ -9709,10 +10141,10 @@ var missingLibrarySymbols = [
   'makePromise',
   'idsToPromises',
   'makePromiseCallback',
-  'ExceptionInfo',
   'findMatchingCatch',
   'getSocketFromFD',
   'getSocketAddress',
+  'FS_mkdirTree',
   '_setNetworkCallback',
   'writeGLArray',
   'registerWebGlEventCallback',
@@ -9743,7 +10175,6 @@ var unexportedSymbols = [
   'abort',
   'keepRuntimeAlive',
   'wasmMemory',
-  'wasmTable',
   'wasmExports',
   'stackAlloc',
   'stackSave',
@@ -9788,6 +10219,7 @@ var unexportedSymbols = [
   'asyncLoad',
   'alignMemory',
   'mmapAlloc',
+  'wasmTable',
   'sigToWasmTypes',
   'freeTableIndexes',
   'functionsInTableMap',
@@ -9804,6 +10236,7 @@ var unexportedSymbols = [
   'intArrayFromString',
   'UTF16Decoder',
   'stringToNewUTF8',
+  'stringToUTF8OnStack',
   'JSEvents',
   'specialHTMLTargets',
   'maybeCStringToJsString',
@@ -9827,6 +10260,7 @@ var unexportedSymbols = [
   'uncaughtExceptionCount',
   'exceptionLast',
   'exceptionCaught',
+  'ExceptionInfo',
   'Browser',
   'setMainLoop',
   'wget',
@@ -9890,14 +10324,22 @@ dependenciesFulfilled = function runCaller() {
   if (!calledRun) dependenciesFulfilled = runCaller; // try this again later, after new deps are fulfilled
 };
 
-function callMain() {
+function callMain(args = []) {
   assert(runDependencies == 0, 'cannot call main when async dependencies remain! (listen on Module["onRuntimeInitialized"])');
   assert(__ATPRERUN__.length == 0, 'cannot call main when preRun functions remain to be called');
 
   var entryFunction = _main;
 
-  var argc = 0;
-  var argv = 0;
+  args.unshift(thisProgram);
+
+  var argc = args.length;
+  var argv = stackAlloc((argc + 1) * 4);
+  var argv_ptr = argv;
+  args.forEach((arg) => {
+    HEAPU32[((argv_ptr)>>2)] = stringToUTF8OnStack(arg);
+    argv_ptr += 4;
+  });
+  HEAPU32[((argv_ptr)>>2)] = 0;
 
   try {
 
@@ -9921,7 +10363,7 @@ function stackCheckInit() {
   writeStackCookie();
 }
 
-function run() {
+function run(args = arguments_) {
 
   if (runDependencies > 0) {
     return;
@@ -9951,7 +10393,7 @@ function run() {
 
     if (Module['onRuntimeInitialized']) Module['onRuntimeInitialized']();
 
-    if (shouldRunNow) callMain();
+    if (shouldRunNow) callMain(args);
 
     postRun();
   }
