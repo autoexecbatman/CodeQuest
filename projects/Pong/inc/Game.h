@@ -8,7 +8,7 @@ class Game
 public:
 	const int windowWidth = 800;
 	const int windowHeight = 450;
-	const char* windowTitle = "Hello Raylib";
+	const char* windowTitle = "CppRL";
 	bool shouldQuit = false;
 
 public:
@@ -27,8 +27,9 @@ public:
 
 protected:
 private:
-	entt::registry registry; // Initialize EnTT registry
-	entt::entity player; // Create player entity
+	entt::registry registry{}; // Initialize EnTT registry
+	entt::entity player; // Declare player entity
+	entt::entity enemy; // Declare enemy entity
 };
 
 extern Game game;
