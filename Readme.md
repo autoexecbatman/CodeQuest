@@ -75,6 +75,7 @@ Make sure to enable GitHub Pages in your repository settings to benefit from aut
 ### Viewing Your Published Project
 After enabling GitHub Pages and once the GitHub Actions build is complete, your project can be accessed at:
 **`https://<github-username>.github.io/RepositoryName/Project/Project.html`**
+[Example Game](https://autoexecbatman.github.io/CodeQuest/Pong/Pong.html)
 
 ---
 
