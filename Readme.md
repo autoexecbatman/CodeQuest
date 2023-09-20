@@ -43,6 +43,15 @@ This repository is designed to jumpstart your Raylib projects, offering pre-conf
     ```shell
     cmake .. -G "Visual Studio 17 2022"
     ```
+4. When building don't forget to set the **working library** for your build.
+   - Right-click on your project in the Solution Explorer.
+   - Select `Properties`.
+   - Under `Configuration Properties` > `Debugging` > `Working Directory`, set the path to the directory containing your project's executable.
+   - it should be located at `bin/<project-name>/Debug` or `bin/<project-name>/Release`
+   - Make sure you select a single startup project in the Solution Explorer.
+   - Right-click on your solution in the Solution Explorer.
+   - Select `Set Startup Projects...`.
+   - Select `Single startup project` and select your project from the dropdown menu.
 
 ---
 
@@ -73,4 +82,3 @@ After enabling GitHub Pages and once the GitHub Actions build is complete, your 
 - [Raylib GitHub](https://github.com/raysan5/raylib)
 - [Emscripten's site](https://emscripten.org/)
 - [Visual Studio's Documentation](https://docs.microsoft.com/en-us/visualstudio/?view=vs-2022)
-
