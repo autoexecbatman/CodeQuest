@@ -79,6 +79,7 @@ After enabling GitHub Pages and once the GitHub Actions build is complete, your 
 ---
 
 ### Further Resources
+- [Originally copied from this repo](https://github.com/aaronrcox/EmscriptenHelloRaylib)
 - [Raylib GitHub](https://github.com/raysan5/raylib)
 - [Emscripten's site](https://emscripten.org/)
 - [Visual Studio's Documentation](https://docs.microsoft.com/en-us/visualstudio/?view=vs-2022)
