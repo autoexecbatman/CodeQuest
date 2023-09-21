@@ -61,9 +61,9 @@ This repository is designed to jumpstart your Raylib projects, offering pre-conf
 3. Locate your build in `bin/Emscripten/Your_Project_Name/`.
 4. To serve the project locally, use the following commands:
    - Navigate to emscripten build location folder
-     - cd bin/Emscripten/Your_Project_Name/
+     - `cd bin/Emscripten/Your_Project_Name/`
    - Invoke `emrun`  
-     -emrun Your_Project_Name.html
+     - `emrun Your_Project_Name.html`
 
 ---
 
