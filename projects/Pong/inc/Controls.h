@@ -1,87 +1,46 @@
-#ifndef CONTROLS_H
-#define CONTROLS_H
+/**
+ * @file Controls.h
+ * @brief Defines control utility functions.
+ *
+ * This header file contains functions encapsulated in the Controls namespace
+ * that are designed to handle player input and control behavior.
+ */
 
-//#include <curses.h>
-#include <raylib.h>
+#pragma once
 
-//==CONTROLS==
-// the enumeration for the controls of the player
-enum class Controls : int
-{
-	// the controls for the player movement
-	UP = '8',
-	UP_ARROW = KEY_UP,
-	/*UP_ARROW_NUMPAD = KEY_A2,*/
+#include "raylib.h"
 
-	DOWN = '2',
-	DOWN_ARROW = KEY_DOWN,
-	/*DOWN_ARROW_NUMPAD = KEY_C2,*/
+ /**
+  * @namespace Controls
+  * @brief Namespace encapsulating control-related functions.
+  *
+  * The Controls namespace provides utility functions to handle player input and update
+  * player position based on that input. These functions are designed to be modular and can
+  * be easily integrated into the main game loop or other game mechanisms.
+  */
+namespace Controls {
 
-	LEFT = '4',
-	LEFT_ARROW = KEY_LEFT,
-	/*LEFT_ARROW_NUMPAD = KEY_B1,*/
+    /**
+     * @brief Checks if the player is moving.
+     *
+     * This function reads the current state of the relevant control keys to determine if
+     * the player character is intended to be moving.
+     *
+     * @return bool True if the player is moving, false otherwise.
+     */
+    bool IsPlayerMoving();
 
-	RIGHT = '6',
-	RIGHT_ARROW = KEY_RIGHT,
-	/*RIGHT_ARROW_NUMPAD = KEY_B3,*/
-
-	UP_LEFT = '7',
-	/*UP_LEFT_ARROW_NUMPAD = KEY_A1,*/
-
-	UP_RIGHT = '9',
-	/*UP_RIGHT_ARROW_NUMPAD = KEY_A3,*/
-
-	DOWN_LEFT = '1',
-	/*DOWN_LEFT_ARROW_NUMPAD = KEY_C1,*/
-
-	DOWN_RIGHT = '3',
-	/*DOWN_RIGHT_ARROW_NUMPAD = KEY_C3,*/
-
-	// input for the player to wait
-	WAIT = '5',
-	/*WAIT_ARROW_NUMPAD = KEY_B2,*/
-
-	// input for the player to hit himself
-	HIT_SELF = ' ',
-
-	// input for the player to pick items 
-	PICK = 'p',
-	PICK_SHIFT_STAR = '*',
-	/*PICK_NUMPAD = PADSTAR,*/
-
-	// input for displaying the inventory
-	INVENTORY = 'i',
-
-	// input for displaying the game menu
-	ESCAPE = 27,
-
-	/*MOUSE = KEY_MOUSE,*/
-
-	HEAL = 'a',
-
-	// input for the player to drop items
-	DROP = 'd',
-
-	CHAR_SHEET = 'c',
-
-	DESCEND = '>',
-
-	// input for the player to target 
-	TARGET = 't',
-
-	// the controls for the player to exit the game
-	QUIT = 'q',
-
-	// switch player1 keypad F1
-	SWITCH_P1 = 'v',
-
-	// switch player2
-	SWITCH_P2 = 'b',
-
-	// switch player3
-	SWITCH_P3 = 'n',
-
-	// switch all
-	SWITCH_ALL = 'm'
-};
-#endif // !CONTROLS_H
+    /**
+     * @brief Updates the position of the player.
+     *
+     * This function updates the player's x and y position based on the provided velocity
+     * components (dx, dy). The function reads the current state of the control keys to
+     * adjust the position accordingly.
+     *
+     * @param x Reference to the x-coordinate of the player.
+     * @param y Reference to the y-coordinate of the player.
+     * @param dx The velocity component in the x-direction.
+     * @param dy The velocity component in the y-direction.
+     */
+    void UpdatePlayerPosition(int& x, int& y, int dx, int dy);
+}

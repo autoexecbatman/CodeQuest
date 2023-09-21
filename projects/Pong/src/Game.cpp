@@ -8,58 +8,6 @@
 constexpr int MAX_IDLE_FRAMES = 4;
 constexpr int MAX_RUN_FRAMES = 6;
 
-enum PlayerState
-{
-	IDLE,
-	RUNNING
-};
-
-struct Position
-{
-	int x, y;
-};
-
-struct Velocity
-{
-	int dx, dy;
-};
-
-struct Sprite
-{
-	Texture2D idleTexture;
-	Texture2D runningTexture;
-};
-
-struct Animation
-{
-	PlayerState state = IDLE;
-
-	int currentFrame = 0;
-	int framesCounter = 0;
-	int framesSpeed = 8;
-	Rectangle frameRec{};
-
-	int runCurrentFrame = 0;
-	int runFramesCounter = 0;
-	Rectangle runFrameRec{};
-};
-
-// Helper function for updating animations
-void UpdateAnimation(Animation& anim, const Sprite& sprite, int maxFrames, Rectangle& frameRec)
-{
-	anim.framesCounter++;
-	if (anim.framesCounter >= (60 / anim.framesSpeed))
-	{
-		anim.framesCounter = 0;
-		anim.currentFrame++;
-		if (anim.currentFrame >= maxFrames)
-		{
-			anim.currentFrame = 0;
-		}
-		frameRec.x = (float)anim.currentFrame * frameRec.width;
-	}
-}
-
 Game::Game()
 {
 	// Initialize player entity using the member variable
@@ -134,11 +82,9 @@ void Game::Update()
 			// Custom behavior based on entity (player or enemy)
 			if (entity == player)
 			{
-				// Update position based on input for player
-				if (IsKeyDown(KEY_RIGHT)) { pos.x += vel.dx; isMoving = true; }
-				if (IsKeyDown(KEY_LEFT)) { pos.x -= vel.dx; isMoving = true; }
-				if (IsKeyDown(KEY_UP)) { pos.y -= vel.dy; isMoving = true; }
-				if (IsKeyDown(KEY_DOWN)) { pos.y += vel.dy; isMoving = true; }
+				// Use the Controls namespace to handle player control logic
+				isMoving = Controls::IsPlayerMoving();
+				Controls::UpdatePlayerPosition(pos.x, pos.y, vel.dx, vel.dy);
 
 				// Wrap around screen
 				if (pos.x > 800) { pos.x = 0; }
@@ -160,15 +106,9 @@ void Game::Update()
 				
 			}
 
+
 			// Update animation state
-			if (isMoving)
-			{
-				anim.state = RUNNING;
-			}
-			else
-			{
-				anim.state = IDLE;
-			}
+			anim.state = isMoving ? RUNNING : IDLE;
 
 			// Update animation based on state
 			if (anim.state == IDLE)
