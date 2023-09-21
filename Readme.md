@@ -60,10 +60,10 @@ This repository is designed to jumpstart your Raylib projects, offering pre-conf
 2. Run `windows_docker_build_web.bat`.
 3. Locate your build in `bin/Emscripten/Your_Project_Name/`.
 4. To serve the project locally, use the following commands:
-    ```shell
-    cd bin/Emscripten/Your_Project_Name/
-    emrun Your_Project_Name.html
-    ```
+   - Navigate to emscripten build location folder
+     - cd bin/Emscripten/Your_Project_Name/
+   - Invoke `emrun`  
+     -emrun Your_Project_Name.html
 
 ---
 
