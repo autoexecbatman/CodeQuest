@@ -67,7 +67,7 @@ void Game::Draw()
 	DrawRectangleRounded({ 320, 55, 170, 60 }, 0.3, 6, lightBlue);
 	
 	char scoreText[10];
-	sprintf_s(scoreText, "%d", score);
+	sprintf(scoreText, "%d", score);
 	Vector2 textSize = MeasureTextEx(font, scoreText, 38, 2);
 
 	DrawTextEx(
