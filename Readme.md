@@ -48,7 +48,7 @@ This repository is designed to jumpstart your Raylib projects, offering pre-conf
    - Select `Properties`.
    - Under `Configuration Properties` > `Debugging` > `Working Directory`, set the path to the directory containing your project's executable.
    - it should be located at `bin/<project-name>/Debug` or `bin/<project-name>/Release`
-   - Make sure you select a single startup project in the Solution Explorer.
+5. Make sure you select a single startup project in the Solution Explorer.
    - Right-click on your solution in the Solution Explorer.
    - Select `Set Startup Projects...`.
    - Select `Single startup project` and select your project from the dropdown menu.

@@ -1,4 +1,5 @@
 #pragma once
+#include <memory>
 
 class Game;
 
@@ -16,6 +17,6 @@ public:
 protected:
 private:
 
-	Game* m_game = nullptr;
+	std::unique_ptr<Game> m_game{ nullptr };
 };
 

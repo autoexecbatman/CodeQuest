@@ -26,9 +26,9 @@ Application::~Application()
 
 void Application::Run()
 {
-	m_game = new Game();
+	m_game = std::make_unique<Game>();
 
-	InitWindow(m_game->windowWidth, m_game->windowHeight, m_game->windowTitle);
+	InitWindow(m_game->windowWidth, m_game->windowHeight, m_game->windowTitle.c_str());
 	SetTargetFPS(60);
 
 	m_game->Load();
@@ -41,6 +41,7 @@ void Application::Run()
 	#else
 		// On windows, we control our own main loop
 		// run until the m_quitApplication has been set to true
+	
 		while (!m_game->shouldQuit)
 			GameLoop();
 	#endif
@@ -49,16 +50,12 @@ void Application::Run()
 
 	// clearnup
 	CloseWindow();
-
-	delete m_game;
-	m_game = nullptr;
 }
 
 void Application::GameLoop()
 {
 	m_game->shouldQuit = m_game->shouldQuit || WindowShouldClose();
-
+	m_game->HandleInput();
 	m_game->Update();
 	m_game->Draw();
-
 }

@@ -1,9 +1,6 @@
-
-cmake_minimum_required (VERSION 3.8)
+cmake_minimum_required (VERSION 3.19)
 
 project("Tetris")
-
-
 
 # Add source to this project's executable.
 FILE(GLOB Proj_C_Files src/*.c)
@@ -48,7 +45,6 @@ if (EMSCRIPTEN)
 	# no custom copy actions needed    
 	# 
 elseif(MSVC)
-
 	# copy asset directory to output folder
 	add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD   
 		COMMAND ${CMAKE_COMMAND} -E copy_directory 
