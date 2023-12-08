@@ -44,7 +44,7 @@ This repository is designed to jumpstart your Raylib projects, offering pre-conf
     cmake .. -G "Visual Studio 17 2022"
     ```
 4. When building don't forget to set the **working library** for your build.
-   - Right-click on your project in the Solution Explorer.
+   - Right-click on **your project** in the Solution Explorer.
    - Select `Properties`.
    - Under `Configuration Properties` > `Debugging` > `Working Directory`, set the path to the directory containing your project's executable.
    - it should be located at `bin/<project-name>/Debug` or `bin/<project-name>/Release`
